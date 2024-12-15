@@ -326,7 +326,7 @@ border: 1px slid white;
   }
 
   .etapes-container {
-    width: 94.1%;
+    width: 100%;
     background-color: rgba(169, 254, 0, 0);
     height: 350px;
 }
@@ -341,7 +341,7 @@ border: 1px slid white;
 
 
 
-.etape-toggle-header {
+.etape-togle-header {
   width: 100%;
 min-width: 200px;
 border: 1px slid white;
