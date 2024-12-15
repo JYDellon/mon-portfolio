@@ -28,11 +28,11 @@ function EtapesDansLaCreationDunSite() {
         <>
             <div>
                 {/* Texte d'introduction */}
-          <div className="intro-text">
-            <h2>
-              Votre site web clés en main
-            </h2>
-          </div>
+            <div className="intro-text">
+                <h2>
+                Votre site web clés en main
+                </h2>
+            </div>
             </div>
             <div className="etapes-container">
                 

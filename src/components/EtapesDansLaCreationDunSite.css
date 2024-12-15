@@ -318,15 +318,16 @@ border: 1px slid white;
 
 @media (max-width: 399px) {
   .intro-text {
-    font-size: 1.3em;
+    font-size: 16px;
     max-width: 420px;
     padding: 0 10px;
     margin-top: -20px;
     width: 90%;
+    font-size: 1.4em;
   }
 
   .etapes-container {
-    width: 100%;
+    width: 94.1%;
     background-color: rgba(169, 254, 0, 0);
     height: 350px;
 }
@@ -341,7 +342,7 @@ border: 1px slid white;
 
 
 
-.etape-togle-header {
+.etape-toggle-header {
   width: 100%;
 min-width: 200px;
 border: 1px slid white;

@@ -24,9 +24,10 @@
   .apropos-container {
     background-color: #ff00a200;
     display: flex;
+    margin: 0 auto;
     flex-direction: column;
     gap: 10px;
-    width: 420px;
+    width: 100%;
     height: 500px;
     margin: 0 auto;
     color: var(--couleur-primaire); 
@@ -37,7 +38,9 @@
   /* Chapitre Toggle Container commun */
   .chapitre-toggle-container {
     cursor: pointer;
-    width: 100%;
+    width: 95%;
+    max-width: 420px;
+    
     /* border: 1px solid var(--couleur-secondaire); */
     border-radius: 30px;
     box-shadow: var(--box-shadow);
