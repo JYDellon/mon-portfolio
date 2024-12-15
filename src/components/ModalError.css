@@ -1,0 +1,48 @@
+/* Overlay de la modale, couvrant toute la page et avec un z-index élevé */
+.modal-error-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Couleur sombre pour l'overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; /* Assurez-vous qu'il soit au-dessus de toutes les autres modales */
+}
+
+/* Contenu de la modale */
+.modal-error {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  z-index: 10001; /* Cela permet de s'assurer que le contenu de la modale est bien au-dessus de l'overlay */
+}
+
+/* Styles pour le bouton de fermeture */
+.modal-error button {
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.close {
+position: absolute;
+top: 10px;
+right: 10px;
+font-size: 24px;
+cursor: pointer;
+}
+
+
+  .modal-error{
+    width: 90%;
+  }

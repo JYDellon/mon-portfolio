@@ -1,0 +1,1088 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.contact-container2 {
+  background: linear-gradient(to right, #003f5c00, #6a9bb800);
+
+}
+
+.contact-container {
+    background: linear-gradient(to right, #003f5c00, #6a9bb800);
+    height: 80vh;
+}
+
+/* Aligner les boutons en haut */
+.form-header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5px;
+}
+
+/* Style des boutons */
+.form-button {
+    width: 40%;
+    text-align: center;
+    background-color: #007bff; /* Couleur principale */
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+.contact-layout {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Colonne gauche */
+.left-section {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: -140px
+}
+
+.availability-card, .phone-card {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.availability-card h3, .phone-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Disponibilité - Jours et horaires */
+.availability-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.days, .hours {
+    display: flex;
+    flex-direction: column;
+}
+
+.availability-item {
+    padding: 5px 0;
+}
+
+/* Icône de disponibilité */
+.availability-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* Colonne centrale */
+.center-section {
+    flex: 2;
+    padding: 20px;
+    text-align: center;
+}
+
+.center-section iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+
+/* Colonne droite */
+.right-section {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: -140px
+}
+
+.mail-card, .social-cardContact {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mail-card h3, .social-cardContact h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Icône pour le mail et téléphone */
+.icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* Icônes des réseaux sociaux */
+.reseaux {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 30px;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #007bff;
+}
+
+.contact-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espacement entre les colonnes */
+    padding: 40px 20px;
+}
+
+.left-section,
+.center-section,
+.right-section {
+    flex: 1;
+  /* background: linear-gradient(to right, #003f5c, #6a9cb8); */
+    border-radius: 10px;
+    padding: 20px;
+    /* box-shadow: 0 4px 6px rgb(63, 62, 62,0.7); */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.left-section:hover,
+.center-section:hover,
+.right-section:hover {
+    transform: translateY(-5px);
+    /* box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); */
+}
+
+/* Disposition en colonne avec espace entre les éléments */
+.left-section,
+.right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Disponibilité */
+.availability-card {
+    margin-bottom: 20px;
+}
+
+.availability-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.availability-item span {
+    display: block;
+    color: #555;
+}
+
+/* Téléphone */
+.phone-card {
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.phone-card:hover {
+    background-color: #e3e3e3;
+}
+
+.phone-card h3,
+.phone-card p {
+    margin: 5px 0;
+}
+
+/* Iframe */
+.center-section iframe {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* Mail */
+.mail-card {
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mail-card:hover {
+    background-color: #e3e3e3;
+}
+
+.mail-card h3,
+.mail-card p {
+    margin: 5px 0;
+}
+
+/* Suivez-nous */
+.social-cardContact {
+    text-align: center;
+}
+
+.social-cardContact h3 {
+    margin-bottom: 15px;
+}
+
+.reseaux {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 1.8em;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007bff; /* Couleur au survol */
+}
+
+/* Scroll to top */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-layout {
+        flex-direction: column;
+    }
+
+    .left-section,
+    .center-section,
+    .right-section {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Styles pour la modale */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 3, 3, 0.5); /* Fond semi-transparent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Contenu de la modale */
+.modal-contentT {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1900px; /* Largeur maximale de la modale */
+    width: 50%; /* Largeur responsive */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Bouton de fermeture */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Ajout d'une transition pour le fond */
+.modal {
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+/* Animation pour afficher la modale */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+/* Styles généraux pour l'application */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 2rem 1rem;
+    width: 1200px;
+    height: 660px;
+    margin: 0 auto;
+  }
+  
+  .form-header {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: -50px;
+  }
+  
+  .form-button {
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+  }
+  
+  .form-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .contact-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  
+  .left-section, .center-section, .right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .availability-card, .phone-card, .mail-card, .social-cardContact {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .availability-card:hover, .phone-card:hover, .mail-card:hover, .social-cardContact:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .availability-icon, .icon {
+    font-size: 2rem;
+    color: #007bff;
+  }
+  
+  .availability-details {
+    margin-top: 1rem;
+  }
+  
+  .availability-item {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .social-icon {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+  }
+  
+  .social-icon:hover {
+    color: #0056b3;
+  }
+  
+  .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .scroll-to-top:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Pour le formulaire dans la modale */
+  .modal-content {
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-group {
+    margin-bottom: 1rem;
+  }
+  
+  .input1 {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    transition: border 0.3s ease;
+  }
+  
+  .input1:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  }
+  
+  .boutonbtn {
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 48%;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .boutonbtn:hover {
+    background-color: #0056b3;
+  }
+  
+  .boutons-containerR {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  /* Pour la carte Google Maps */
+  iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+
+
+
+
+
+
+
+
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .form-header {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .form-button {
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .contact-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .left-section, .center-section, .right-section {
+    flex: 1;
+  }
+  
+  .availability-card, .phone-card, .mail-card, .social-cardContact {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .icon {
+    margin-right: 10px;
+  }
+  
+  .availability-icon {
+    color: #ff5722;
+    margin-right: 10px;
+  }
+  
+  .reseaux {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-icon {
+    font-size: 1.5rem;
+  }
+  
+  .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-contentT {
+    background: rgba(255, 255, 255, 0);
+    padding: 2rem;
+    border-radius: 10px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  /* Style de base pour la carte */
+.card {
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* Animation d'apparition avec fondu */
+  }
+  
+  /* Animations pour faire apparaître les cartes depuis les coins */
+  .availability-card {
+    animation: slideFromTopLeft 1s ease-out forwards;
+  }
+  
+  .phone-card {
+    animation: slideFromBottomLeft 1s ease-out forwards;
+  }
+  
+  .mail-card {
+    animation: slideFromTopRight 1s ease-out forwards;
+  }
+  
+  .social-cardContact {
+    animation: slideFromBottomRight 1s ease-out forwards;
+  }
+  
+  /* Animation pour les boutons */
+  .form-button {
+    opacity: 0;
+    animation: slideUpButton 0.8s ease-out forwards;
+  }
+  
+  /* Animations des cartes */
+  @keyframes slideFromTopLeft {
+    from {
+      transform: translate(-100%, -100%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideFromBottomLeft {
+    from {
+      transform: translate(-100%, 100%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideFromTopRight {
+    from {
+      transform: translate(100%, -100%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideFromBottomRight {
+    from {
+      transform: translate(100%, 100%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+  
+  /* Animation pour les boutons */
+  @keyframes slideUpButton {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Animation d'apparition générale */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Animation du bouton de retour en haut */
+  .scroll-to-top {
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideUpButton 1s ease-out forwards;
+  }
+
+  
+
+  /* Modifier la largeur de la modale sur grand écran */
+@media (min-width: 1200px) {
+  .modal-contentT {
+      width: 1260px; /* Largeur responsive par défaut */
+      max-width: 1900px; /* Limiter la largeur maximale de la modale */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Styles généraux pour l'application */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f500;
+  padding: 2rem 1rem;
+  width: 100%; /* Utiliser 100% de la largeur de l'écran */
+  max-width: 1200px; /* Limiter la largeur */
+  margin: 0 auto;
+}
+
+.form-header {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.form-button {
+  padding: 1rem 2rem;
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+.contact-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap; /* Permet d'enrouler les éléments sur les petits écrans */
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.left-section, .center-section, .right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 100%; /* Permet aux colonnes de prendre toute la largeur */
+}
+
+.availability-card, .phone-card, .mail-card, .social-cardContact {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.3s ease-in-out;
+  flex: 1;
+  width: 100%;
+}
+
+.availability-card:hover, .phone-card:hover, .mail-card:hover, .social-cardContact:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.availability-icon, .icon {
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.availability-details {
+  margin-top: 1rem;
+}
+
+.availability-item {
+  font-size: 1rem;
+  color: #333;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #0056b3;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-to-top:hover {
+  background-color: #0056b3;
+}
+
+/* Pour le formulaire dans la modale */
+.modal-content {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input1 {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  transition: border 0.3s ease;
+}
+
+.input1:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.boutonbtn {
+  padding: 1rem 2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 48%;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.boutonbtn:hover {
+  background-color: #0056b3;
+}
+
+.boutons-containerR {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Pour la carte Google Maps */
+iframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsiveness pour les petits écrans */
+@media (max-width: 1000px) {
+  .contact-container {
+      padding: 1rem;
+  }
+
+  .form-header {
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  .form-button {
+      width: 100%;
+      padding: 1rem;
+  }
+
+  .contact-layout {
+      flex-direction: column;
+      gap: 1.5rem;
+  }
+
+  .left-section, .center-section, .right-section {
+      width: 100%;
+      margin-bottom: 1rem;
+  }
+
+  .availability-card, .phone-card, .mail-card, .social-cardContact {
+      width: 100%; /* Les cartes prennent toute la largeur */
+  }
+
+  .social-icon {
+      font-size: 1.2rem;
+      margin: 0 0.3rem;
+  }
+
+  .scroll-to-top {
+      font-size: 1.2rem;
+  }
+
+  iframe {
+      height: 300px; /* Ajuster la hauteur de la carte sur petits écrans */
+  }
+}
+
+
+/* Responsiveness pour les petits écrans */
+@media (max-width: 767px) {
+  .contact-container {
+      padding: 1rem;
+      background-color: rgba(225, 255, 0, 0);
+      height: 450px;
+      overflow-y: auto;
+      margin-top: -30px;
+  }
+
+  .form-header {
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: -100px;
+  }
+
+  .form-button {
+      width: 100%;
+      padding: 1rem;
+  }
+
+  .contact-layout {
+      flex-direction: column;
+      margin-bottom: 20px;      
+  }
+
+  .left-section, .center-section, .right-section {
+      width: 25%;
+      margin-bottom: 1rem;
+  }
+
+  .availability-card, .phone-card, .mail-card, .social-cardContact {
+      width: 100%; /* Les cartes prennent toute la largeur */
+    
+  }
+
+  .social-icon {
+      font-size: 1.2rem;
+      margin: 0 0.3rem;
+  }
+
+  .scroll-to-top {
+      font-size: 1.2rem;
+  }
+
+  iframe {
+      height: 300px; /* Ajuster la hauteur de la carte sur petits écrans */
+  }
+  .left-section,.center-section,.right-section,  .availability-card, .phone-card, .mail-card, .social-cardContact {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+
+  
+
+}
+
+.cardmDevis2 {
+  background: linear-gradient(to right, rgb(97, 53, 0), darkorange);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  opacity: 0;
+  animation: slideAndRotateIn3 3s ease-out forwards;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.cardmContact {
+  background-color: #007bff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  opacity: 0;
+  animation: slideAndRotateIn2 3s ease-out forwards; 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+
+
+@keyframes slideAndRotateIn2 {
+  0% {
+    transform: translateX(-100%) rotateY(720deg); /* Commence hors de l'écran avec rotation */
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-10%) rotateY(180deg); /* En cours de mouvement et rotation */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) rotateY(0); /* Position finale avec rotation finale */
+    opacity: 1;
+  }
+}
+
+@keyframes slideAndRotateIn3 {
+  0% {
+    transform: translateX(100%) rotateY(720deg); /* Commence hors de l'écran avec rotation */
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-10%) rotateY(180deg); /* En cours de mouvement et rotation */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) rotateY(0); /* Position finale avec rotation finale */
+    opacity: 1;
+  }
+}
+
+

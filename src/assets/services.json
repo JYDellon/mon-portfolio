@@ -1,0 +1,121 @@
+[
+    {
+      "title": "Conseil et analyse des besoins",
+      "description": "Nous analysons vos besoins et objectifs pour vous proposer des solutions web sur-mesure. Cette étape cruciale nous permet de comprendre votre audience, vos attentes, et de définir ensemble la meilleure stratégie digitale.",
+      "points": [
+        "Analyse approfondie de vos besoins.",
+        "Définition de vos objectifs et cibles.",
+        "Recommandations personnalisées.",
+        "Proposition d'une architecture adaptée."
+      ],
+      "image": "conseil-analyse-besoins.jpg"
+    },
+    {
+      "title": "Conception UI/UX",
+      "description": "Créez des interfaces intuitives et esthétiques qui maximisent l'expérience utilisateur. Nous concevons des maquettes interactives et des prototypes pour valider l’interface avant le développement.",
+      "points": [
+        "Design moderne et ergonomique.",
+        "Prototypes interactifs pour validation.",
+        "Adaptation à votre charte graphique.",
+        "Optimisation de l'expérience utilisateur (UX).",
+        "Tests d’utilisabilité pour garantir l'efficacité.",
+        "Mobile-first et responsive design."
+      ],
+      "image": "conception-ui-ux.jpg"
+    },
+    {
+      "title": "Développement frontend",
+      "description": "Nous créons des sites web dynamiques et réactifs en utilisant un langage de programmation récent, garantissant des performances optimales et une expérience utilisateur fluide, quel que soit l’appareil.",
+      "points": [
+        "Sites web interactifs : Création d’interfaces utilisateur dynamiques avec React.",
+        "Performance optimisée : Utilisation de techniques avancées pour des temps de réponse rapides.",
+        "Composants réutilisables : Architecture modulaire et scalable pour une maintenance facilitée.",
+        "Adaptabilité mobile : Sites responsive, parfaits sur tout type d'écran (ordinateurs, tablettes, smartphones).",
+        "Gestion de l’état avec Redux : Centralisation des données pour une gestion efficace."
+      ],
+      "image": "developpement-front.jpg"
+    },
+    {
+      "title": "Développement backend",
+      "description": "Nous construisons des APIs robustes et sécurisées avec Node.js pour soutenir des sites web dynamiques, incluant la gestion des données et l’authentification des utilisateurs.",
+      "points": [
+        "Création d’API : Développement d’APIs performantes pour la communication avec le frontend.",
+        "Gestion des bases de données : Intégration de bases de données comme MongoDB ou PostgreSQL.",
+        "Authentification utilisateur : Mise en place de systèmes sécurisés de gestion des utilisateurs (OAuth, JWT).",
+        "Systèmes de gestion de contenu (CMS) : Développement de solutions CMS personnalisées pour faciliter la gestion du contenu."
+      ],
+      "image": "developpement-back2.jpg"
+    },
+    {
+      "title": "Intégration de bases de données et services cloud",
+      "description": "Nous développons des API performantes et gérons la base de données pour des sites dynamiques. Que ce soit pour l’authentification des utilisateurs ou des systèmes de gestion de contenu, nous assurons la robustesse et la scalabilité de votre backend.",
+      "points": [
+        "Développement d'API avec Node.js",
+        "Gestion des bases de données SQL",
+        "Authentification des utilisateurs et gestion des sessions",
+        "Création de CMS sur mesure",
+        "Solutions backend évolutives et sécurisées"
+      ],
+      "image": "integration-cloud.jpg"
+    },
+    {
+      "title": "Optimisation SEO et performances",
+      "description": "Optimisez la visibilité et la rapidité de votre site web dynamique. Nous vous aidons à améliorer votre référencement et à garantir des performances optimales pour offrir une expérience utilisateur fluide et rapide.",
+      "points": [
+        "Optimisation SEO : Amélioration de l’indexation sur les moteurs de recherche (Google, Bing).",
+        "Amélioration des performances : Réduction des temps de chargement pour une navigation rapide.",
+        "SEO On-page : Optimisation des balises, des images, et des URL.",
+        "Optimisation mobile : Site adapté aux appareils mobiles pour un meilleur classement mobile-first.",
+        "Suivi et Reporting : Mise en place de rapports de performance SEO et recommandations d'amélioration continue."
+      ],
+      "image": "optimisation-seo.jpg"
+    },
+    {
+      "title": "Tests et assurance qualité",
+      "description": "Assurez-vous que votre site fonctionne parfaitement sur tous les appareils et navigateurs.",
+      "points": [
+        "Tests fonctionnels : Vérification de toutes les fonctionnalités du site pour s'assurer qu'elles répondent aux exigences.",
+        "Tests d'intégration : Garantir une intégration fluide des différentes parties du site (backend, API, base de données).",
+        "Optimisation des performances : Tests de vitesse, temps de chargement et optimisation pour une expérience utilisateur fluide.",
+        "Compatibilité multi-appareils : Vérification de l'affichage et de la fonctionnalité sur tous types de dispositifs (desktop, mobile, tablette).",
+        "Tests cross-browser : Validation de la compatibilité sur différents navigateurs (Chrome, Firefox, Safari, Edge, etc.).",
+        "Tests de sécurité : Identification et résolution des vulnérabilités potentielles."
+      ],
+      "image": "tests-qualite.jpg"
+    },
+    {
+      "title": "Hébergement et déploiement",
+      "description": "Nous assurons le déploiement de votre site web sur des serveurs fiables et sécurisés, avec un hébergement adapté à vos besoins spécifiques. Notre service garantit une mise en ligne rapide et une performance optimale.",
+      "points": [
+        "Hébergement sécurisé sur des plateformes cloud (AWS, DigitalOcean, etc.).",
+        "Déploiement rapide et configuration optimale.",
+        "Scalabilité pour s'adapter à la croissance de votre site.",
+        "Sauvegardes régulières pour assurer la sécurité de vos données.",
+        "Support technique disponible en cas de besoin."
+      ],
+      "image": "hebergement-deploiement.jpg"
+    },
+    {
+      "title": "Maintenance et mises à jour",
+      "description": "Assurez la pérennité et la performance de votre site avec notre service de maintenance continue. Nous nous occupons des mises à jour régulières, de la sécurité, et de l'optimisation, pour que votre site reste fonctionnel et à jour.",
+      "points": [
+        "Mise à jour régulière des technologies (React, API, etc.).",
+        "Surveillance et gestion de la sécurité (patches, prévention des vulnérabilités).",
+        "Suivi de la performance du site (vitesse de chargement, expérience utilisateur).",
+        "Ajout et mise à jour de contenu selon vos besoins."
+      ],
+      "image": "maintenance-mises-a-jour.jpg"
+    },
+    {
+      "title": "Formation et support client",
+      "description": "Offrez à vos clients une gestion autonome de leur site grâce à des formations personnalisées et un support technique réactif, garantissant une prise en main facile et une assistance continue.",
+      "points": [
+        "Formation personnalisée à l’utilisation du site (ajout de contenu, gestion des utilisateurs, etc.).",
+        "Support technique réactif pour résoudre rapidement les problèmes.",
+        "Assistance continue pour garantir une expérience sans faille après le lancement.",
+        "Documentation détaillée sur l'administration du site."
+      ],
+      "image": "formation-suppprt.jpg"
+    }
+  ]
+  

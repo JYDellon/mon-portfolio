@@ -1,0 +1,245 @@
+/* ======= Conteneur principal ======= */
+.navbar-container {
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Header avec le bouton hamburger */
+.navbar-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+}
+
+.menu-toggle {
+    font-size: 4rem;
+    background: none;
+    border: none;
+    color: darkorange;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+/* Overlay affiché lorsque le menu est ouvert */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Toujours au-dessus */
+    display: none;
+}
+
+.overlay.open {
+    display: block;
+}
+
+/* Menu principal */
+.navbar-menu {
+    position: absolute;
+    top: 60px; /* Ajustez en fonction de la hauteur de votre header */
+    left: 0;
+    margin: 0 auto;
+    width: 1080px;
+    max-height: 0;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    background:#d7dcd8;
+    border:1px solid #003f5c;
+    transition: max-height 0.4s ease-in-out;
+    z-index: 998;
+    border-radius: 50px;
+
+}
+
+/* Menu ouvert */
+.navbar-menu.open {
+    max-height: 300px; /* Ajustez selon la hauteur du menu */
+}
+
+/* Liens du menu */
+.navbar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-menu ul li {
+    width: 100%;
+}
+
+.navbar-menu ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #003f5c;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    border-radius: 50px;
+    width: 190px;
+}
+
+.navbar-menu ul li a.active {
+    background-color: #6a9cb8;
+    color: white;
+    border-radius: 50px;
+}
+
+.navbar-menu ul li a:hover {
+    background-color: #003f5c;
+    color: white;
+    border-radius: 50px;
+}
+
+/* ======= Responsivité ======= */
+@media (min-width: 1060px) {
+    .navbar-menu {
+        position: static;
+        max-height: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        box-shadow: none;
+    }
+
+    .navbar-menu ul {
+        flex-direction: row;
+    }
+
+    .navbar-menu ul li {
+        width: auto;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .overlay {
+        display: none;
+    }
+}
+
+
+
+/* Modale */
+.modalXXX {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.modalXXX-content {
+    background: white;
+    padding: 20px;
+    border-radius: 50px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modalXXX-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modalXXX-menu ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #003f5c;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 50px;
+}
+
+.modalXXX-menu ul li a.active {
+    background-color: #6a9cb8;
+    color: white;
+    border-radius: 50px;
+}
+
+.modalXXX-menu ul li a:hover {
+    background-color: #003f5c;
+    color: white;
+    border-radius: 50px;
+
+}
+
+
+/* Modale */
+.modalXXX {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #6a9cb8;    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.modalXXX-content {
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    background: none; /* Aucune couleur de fond pour éviter l'ombre */
+}
+
+/* Menu dans la modale */
+.modalXXX-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2em; /* Taille de police ajustée */
+}
+
+.modalXXX-menu ul li {
+    margin-bottom: 10px;
+}
+
+.modalXXX-menu ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #003f5c;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modalXXX-menu ul li a.active {
+    background-color: #6a9cb8;
+    color: white;
+}
+
+.modalXXX-menu ul li a:hover {
+    background-color: #003f5c;
+    color: white;
+}

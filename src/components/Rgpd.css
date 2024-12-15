@@ -1,0 +1,556 @@
+
+
+/* Conteneur principal */
+.rgpd-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 420px;
+  margin: 0 auto;
+}
+
+/* Styles pour les cards */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 50px;
+  
+
+}
+
+/* Style de chaque card */
+.cardN {
+  background: linear-gradient(to right, #003f5c, #6a9cb8);
+  border-radius: 8px;
+  padding: 15px;
+  width: 250px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  opacity: 0; /* Initialement invisibles */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+
+}
+
+.cardN:hover {
+  transform: translateY(-10px); /* Déplacement vers le haut de 10px */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7); /* Augmenter l'ombre pour donner de la profondeur */
+}
+
+
+/* Animations différentes pour chaque card */
+.cardN:nth-child(1) {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.cardN:nth-child(2) {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.cardN:nth-child(3) {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.cardN:nth-child(4) {
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.cardN:nth-child(5) {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.cardN:nth-child(6) {
+  animation: rotateIn 0.6s ease-out forwards;
+}
+
+/* Animations */
+
+/* Apparition en glissant vers le haut */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glissement depuis la gauche */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Glissement depuis la droite */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apparition en glissant vers le bas */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Zoom avant */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Rotation depuis le bas */
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* Affichage du contenu RGPD */
+.rgpd-content {
+  width: 80%;
+  max-width: 1200px;
+  background-color: #8e0c0c;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.content-header {
+  text-align: center;
+}
+
+.content-body {
+  margin-top: 15px;
+  font-size: 1em;
+  text-align: justify;
+}
+
+/* Flèches de navigation */
+.navigation-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.prev-button,
+.next-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.prev-button:hover .arrow,
+.next-button:hover .arrow {
+  transform: scale(1.2);
+}
+
+/* Cacher les boutons de navigation inutilisables */
+.hidden {
+  visibility: hidden;
+}
+
+
+
+
+/* Conteneur principal */
+.rgpd-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  background-color: #00ff4c00;
+  color: #003f5c;
+}
+
+/* Conteneur d'une section */
+.rgpd-toggle-container {
+  width: 100%;
+  border: 1px solid #6a9cb8;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  
+}
+
+/* En-tête de la section */
+.rgpd-toggle-header {
+  margin: 0 auto;
+  width: 3549.5x;
+  height: 50px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  background: linear-gradient(to right, #003f5c, #6a9cb8);
+  color: white;
+  border: 1px solid white;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+.rgpd-toggle-header:hover {
+  background: #005f7c;
+}
+
+/* Icône toggle */
+.toggle-icon {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Contenu déroulé */
+.rgpd-toggle-details {
+  padding: 15px;
+  width: 400px;
+  background: #ffffff;
+  color: #003f5c;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* En-tête actif */
+.rgpd-toggle-header.active {
+  background: #005f7c;
+  font-weight: bold;
+}
+
+/* Mobile-Friendly Styles */
+@media screen and (max-width: 768px) {
+  .rgpd-container {
+    padding: 10px;
+  }
+
+  .rgpd-toggle-header {
+    font-size: 1em;
+  }
+
+  .rgpd-toggle-details {
+    font-size: 0.9em;
+  }
+}
+
+
+
+@media screen and (max-width: 450px) {
+  .rgpd-container {
+    padding: 10px;
+  }
+
+  .rgpd-toggle-header {
+    font-size: 1em;
+  }
+
+  .rgpd-toggle-details {
+    font-size: 0.9em;
+  }
+
+  .chapitre-toggle-container{
+    width: 68%;
+  }
+}
+
+
+
+
+
+
+
+
+/* Conteneur de chaque toggle */
+.rgpd-toggle-container {
+  
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #6a9cb8;
+  background: rgb(255, 255, 255);  
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease; 
+  border-radius: 30px;
+
+}
+
+.rgpd-toggle-container:hover {
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0);
+}
+
+/* En-tête */
+.rgpd-toggle-header {
+  background: linear-gradient(to right, #003f5c, #6a9cb8);
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;  border-radius: 30px;
+  font-size: 15px;text-align: center;
+
+}
+
+.rgpd-toggle-header.active {
+  background: #005f7c;
+  font-weight: bold;
+}
+
+.rgpd-toggle-header:hover {
+  background: #004e6b;
+}
+
+/* Animations */
+.rgpd-toggle-details {
+  max-height: 0; /* Masque le contenu */
+  opacity: 0;
+  padding: 0 15px;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+}
+
+.rgpd-toggle-details.show {
+  max-height: 200px; /* Définit une hauteur suffisante pour afficher le contenu */
+  opacity: 1;
+  padding: 15px;
+}
+
+.rgpd-toggle-details.hide {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 15px;
+}
+
+/* Animation du texte */
+.rgpd-toggle-details.show p {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Animations pour le montage */
+@keyframes appearSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rgpd-toggle-container {
+  opacity: 0; /* Invisibles au départ */
+  transform: translateY(30px); /* Position initiale pour l'animation */
+  animation: appearSlideIn 0.5s ease-out forwards;
+}
+
+/* Animation depuis la gauche */
+@keyframes entrerGauche {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation depuis la droite */
+@keyframes entrerDroite {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Appliquer l'animation avec la bonne classe dynamique */
+.rgpd-toggle-container.gauche {
+  animation: entrerGauche 0.4s ease-out forwards;
+}
+
+.rgpd-toggle-container.droite {
+  animation: entrerDroite 0.4s ease-out forwards;
+}
+
+/* Contrôler les délais */
+.rgpd-toggle-container:nth-child(1).gauche {
+  animation-delay: 0.1s;
+}
+.rgpd-toggle-container:nth-child(3).gauche {
+  animation-delay: 0.3s;
+}
+.rgpd-toggle-container:nth-child(5).gauche {
+  animation-delay: 0.5s;
+}
+
+.rgpd-toggle-container:nth-child(2).droite {
+  animation-delay: 0.2s;
+}
+.rgpd-toggle-container:nth-child(4).droite {
+  animation-delay: 0.4s;
+}
+
+
+
+
+
+.intro-textRgpd{
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: justify;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.4;
+  color: #054461;
+  width: 420px;
+  padding: 10px 30px 10px 30px;
+  max-width: 1200px;
+  border-radius: 30px;
+  background: linear-gradient(to right, #bac1bb, #9bb8bc8d);
+  margin-top: 5px;
+  animation: descendreIntroduction 1s ease-out forwards;
+}
+
+/* Responsivité avec des Media Queries */
+@media (min-width: 993px) and(max-width: 1200px) {
+  .intro-textRgpd{
+    font-size: 18px; /* Taille légèrement réduite pour les écrans plus petits */
+    width: 420px; /* Ajustement de la largeur pour les écrans plus petits */
+  }
+}
+
+@media (max-width: 992px) {
+  .intro-textRgpd{
+    font-size: 16px; /* Réduction de la taille du texte pour s'adapter aux tablettes */
+    /* Réduit encore la largeur sur les tablettes */
+
+    width: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-textRgpd{
+    font-size: 14px; /* Réduit la taille du texte pour les petits écrans */
+     /* Ajustement sur les petits écrans */
+     
+  h2{
+    color: #003f5c;
+  }
+
+  }
+  .toggle-container{
+    height: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .intro-textRgpd{
+    font-size: 16px; /* Taille encore plus petite pour les téléphones */
+    padding: 0 10px; /* Moins de padding pour éviter le débordement */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 350px;
+height: 50px;
+    h2{
+      color: #003f5c;
+    }
+  
+  }
+  .toggle-container{
+    height: 350px;
+  }
+  
+}
+@media (max-width: 360px) {
+  .intro-textRgpd{
+    font-size: 16px; /* Taille encore plus petite pour les téléphones */
+    max-width: 300px; /* Utilise toute la largeur disponible */
+    padding: 0 10px; /* Moins de padding pour éviter le débordement */
+    width: 300px;
+    margin-bottom: 0px;
+    margin-top: -30px;
+  }
+  .toggle-container{
+    height: 350px;
+  }
+}
+
+h2{
+  color: #003f5c;
+}
+

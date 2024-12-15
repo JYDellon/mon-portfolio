@@ -1,0 +1,354 @@
+/* Conteneur principal */
+.etapes-container {
+    width: 550px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(51, 255, 0, 0);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 500px;
+    overflow-y: auto;
+
+}
+
+/* Conteneur pour chaque étape */
+.etape-toggle-container {
+    margin: 0 auto;
+    margin-bottom: 15px;
+    border: 1px solid #fa070700;
+    border-radius: 30px 30px 30px 30px; 
+    background-color: #ffffff;
+    transition: box-shadow 0.3s;
+    animation-fill-mode: forwards; /* Conserve l'état final */
+    opacity: 0; /* Initialement invisible */
+}
+
+
+/* Header de chaque étape */
+.etape-toggle-header {
+    margin: 0 auto;
+    width: 100%;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #003f5c, #6a9cb8); /* Dégradé */
+    color: #fff;
+    border-radius: 50px; /* Arrondi pour le header */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    
+}
+
+/* Header actif */
+.etape-toggle-header.active {
+    background: linear-gradient(to right, #002d45, #507d92); /* Couleurs plus sombres pour l'actif */
+}
+
+
+
+/* Titre dans le header */
+.etape-toggle-header h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+h2{
+  color: #003f5c;
+}
+/* Contenu des détails d'une étape */
+.etape-toggle-details {
+    margin: 0 auto;
+    width: 81%;
+    max-width: 400px;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    border-top: 1px solid #ddd;
+    border-radius: 0 0 50px 50px; /* Arrondi en bas pour un effet harmonieux */
+}
+
+/* Texte des détails */
+.etape-toggle-details .texte {
+    margin: 0;
+}
+
+/* Effet visuel lors du clic */
+.etape-toggle-header:active {
+    transform: scale(0.98);
+}
+
+/* Animations uniques pour chaque toggle */
+
+.etape-toggle-container:nth-child(1) {
+    animation-name: entrerGauche;
+    animation-delay: 0.0s;
+}
+
+.etape-toggle-container:nth-child(2) {
+    animation-name: entrerDroite;
+    animation-delay: 0.1s;
+}
+
+.etape-toggle-container:nth-child(3) {
+    animation-name: entrerGauche;
+    animation-delay: 0.2s;
+}
+
+.etape-toggle-container:nth-child(4) {
+    animation-name: entrerDroite;
+    animation-delay: 0.3s;
+}
+
+.etape-toggle-container:nth-child(5) {
+    animation-name: entrerGauche;
+    animation-delay: 0.4s;
+}
+
+/* Définition des animations */
+
+/* Bounce In */
+
+
+
+  /* Animation depuis la gauche */
+  @keyframes entrerGauche {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Animation depuis la droite */
+  @keyframes entrerDroite {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* Chapitre Toggle avec animation dynamique */
+  .etape-toggle-container.gauche {
+    animation: entrerGauche 0.1s ease-out both;
+  }
+  
+  .etape-toggle-container.droite {
+    animation: entrerDroite 0.1s ease-out both;
+  }
+
+
+
+
+.num-etape-toggle-header{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #003f5c;
+    color: white;
+}
+
+.positionnement{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* Conteneur pour chaque étape */
+.etape-toggle-container {
+    max-width: 400px;
+    width: 82%;
+    min-width: 70%;
+    margin-bottom: 10px;
+    border: 1px solid #fa070700;
+    border-radius: 30px 30px 30px 30px; 
+    background-color: #fffffff8;
+    transition: box-shadow 0.3s;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards; /* Conserve l'état final */
+    opacity: 0; /* Initialement invisible */
+}
+
+
+
+
+
+
+/* Animation d'introduction - Descente depuis le haut */
+@keyframes descendreIntroduction {
+  0% {
+    transform: translateY(-100vh); /* Commence en dehors de la vue depuis le haut */
+    opacity: 0; /* Rend l'élément invisible au début */
+  }
+  100% {
+    transform: translateY(0); /* Position d'arrivée dans sa place normale */
+    opacity: 1; /* Restaure la visibilité */
+  }
+}
+
+/* Application de l'animation sur le texte d'introduction */
+.intro-text {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 2em;
+  line-height: 1.8;
+  padding: 0 10px;
+  width: 500px;
+  border-radius: 30px;
+  background: #f9f9f9;
+  color: #054461;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d7dcd8;
+  height: 50px;
+  
+  /* Ajout de l'animation */
+  animation: descendreIntroduction 1s ease-out forwards;
+}
+
+.intro-text h2 {
+  margin: 10px 0; 
+
+}
+
+
+
+
+
+/* Texte d'introduction */
+.intro-text {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px; 
+  font-weight: bold;
+  color: #054461;
+  padding: 0 10px;
+  max-width: 700px;
+  border-radius: 30px;
+  background: linear-gradient(to right, #bac1bb, #9bb8bc8d);    border: 1px solid #d7dcd8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d7dcd8;
+  
+  /* Ajout de l'animation */
+  animation: descendreIntroduction 1s ease-out forwards;
+}
+
+/* Animation d'introduction - Descente depuis le haut */
+@keyframes descendreIntroduction {
+  0% {
+    transform: translateY(-100vh); /* Commence en dehors de la vue depuis le haut */
+    opacity: 0; /* Rend l'élément invisible au début */
+  }
+  100% {
+    transform: translateY(0); /* Position d'arrivée dans sa place normale */
+    opacity: 1; /* Restaure la visibilité */
+  }
+}
+
+/* Responsivité avec des Media Queries */
+@media (min-width: 993px) and(max-width: 1200px) {
+  .intro-text {
+    font-size: 1.5em; /* Taille légèrement réduite pour les écrans plus petits */
+    max-width: 600px; /* Ajustement de la largeur pour les écrans plus petits */
+  }
+
+}
+
+@media (max-width: 992px) {
+  .intro-text {
+    font-size: 16px;
+    max-width: 420px;
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-text {
+    font-size: 14px; /* Réduit la taille du texte pour les petits écrans */
+    max-width: 400px;
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 576px) {
+  .intro-text {
+    font-size: 16px; /* Taille encore plus petite pour les téléphones */
+    max-width: 420px; /* Utilise toute la largeur disponible */
+    padding: 0 10px; /* Moins de padding pour éviter le débordement */
+    margin-top: -20px;
+    width: 90%;
+    font-size: 1.5em;
+  }
+
+  .etapes-container {
+    width: 94.1%;
+    background-color: rgba(169, 254, 0, 0);
+    height: 350px;
+}
+
+/* Conteneur pour chaque étape */
+.etape-toggle-container {
+  /* max-width: 400px; */
+  width: 300px; 
+  background-color: #fffffff8;
+
+}
+
+
+
+.etape-toggle-header {
+  width: 100%;
+min-width: 200px;
+border: 1px slid white;
+}
+}
+
+@media (max-width: 399px) {
+  .intro-text {
+    font-size: 16px;
+    max-width: 420px;
+    padding: 0 10px;
+    margin-top: -20px;
+    width: 90%;
+    font-size: 1.4em;
+  }
+
+  .etapes-container {
+    width: 94.1%;
+    background-color: rgba(169, 254, 0, 0);
+    height: 350px;
+}
+
+/* Conteneur pour chaque étape */
+.etape-toggle-container {
+  /* max-width: 400px; */
+  width: 300px; 
+  background-color: #fffffff8;
+
+}
+
+
+
+.etape-toggle-header {
+  width: 100%;
+min-width: 200px;
+border: 1px slid white;
+}
+}
+
+
+
+

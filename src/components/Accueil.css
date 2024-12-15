@@ -1,0 +1,475 @@
+
+/* Réinitialiser tous les marges par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Assurez-vous que le body et le html n'ont pas de marges par défaut */
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+
+
+
+
+
+  
+  
+  /* Fixer la hauteur du header */
+  .header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Hauteur fixe */
+    width: 100%;
+  }
+  
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: inherit;
+  color: inherit;
+  font: inherit;
+}
+.centrage{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.accueil-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px 120px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    justify-content:center;
+    padding: 20px 120px;
+    background-color: rgba(78, 50, 205, 0);
+}
+
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.cardm {
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    width: 500px;
+    min-width: 150px;
+    height: 200px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    opacity: 0; 
+    animation: fadeInUp 0.6s ease-out forwards; 
+}
+
+/* Animation de montée avec translation et rotation */
+@keyframes slideAndRotateIn {
+    0% {
+      transform: translateX(100%) rotateY(720deg); /* Commence hors de l'écran avec rotation */
+      opacity: 0;
+    }
+    50% {
+      transform: translateX(-10%) rotateY(180deg); /* En cours de mouvement et rotation */
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0) rotateY(0); /* Position finale avec rotation finale */
+      opacity: 1;
+    }
+  }
+  
+  /* CardMDevis Style */
+  .cardmDevis {
+    background: linear-gradient(to right, rgb(97, 53, 0), darkorange);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    width: 200px;
+    height: 200px;
+    font-size: 1.5em;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideAndRotateIn 3s ease-out forwards; /* Animation appliquée ici */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+.cardm:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+.cardmDevis:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+
+.cardm:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+.cardm:nth-child(1) {
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.cardm:nth-child(2) {
+    animation: slideInFromBottom 1s ease-out forwards;
+}
+
+.cardm:nth-child(3) {
+    animation: slideInFromRight 0.5s ease-out forwards;
+}
+
+.cardm h2 {
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-size:1em;
+    margin-bottom: -35px;
+    width:104%;
+    margin: -20px 0 -35px -18px;
+    color: #f4f4f9; 
+}
+
+
+h3{
+    color:#fff;
+}
+
+
+.devis-link{
+    background-color: #f4f4f900;
+    border: none;
+}
+
+.carousel-container {
+    padding: 20px;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 200px;
+    animation: slideInFromBottom 0.8s ease-out;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 155px;
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px; 
+}
+
+.slide-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+    text-align: left;
+    width: 90%; 
+    
+}
+
+.slide-content h3 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+
+
+.slick-dots li button:before {
+    color: #ffffff;
+}
+
+.slick-prev, .slick-next {
+    z-index: 1;
+    font-size: 1em;
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    border-radius: 50%;
+    color: #ffffff;
+}
+
+
+
+.carousel-image {
+    width: 140px;
+    height: 140px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    margin-right: 30px; 
+    margin-left: -10px;
+    margin-top: -12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.slide-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0; 
+    }
+    100% {
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+
+
+/* Texte d'introduction */
+.intro-textAccueil {
+    margin: 0 auto;
+    margin-top: 20px;
+    font-weight: bold;
+    margin-bottom: -50px;
+    text-align: center;
+    font-size: 2em;
+    color: #054461;
+    padding: 10px 30px 10px 30px;
+    width: 90%;
+    border-radius: 30px;
+    background: #ffffff;
+    width: 420px;
+    background: linear-gradient(to right, #bac1bb, #9bb8bc8d);    border: 1px solid #d7dcd8;
+    
+    /* Ajout de l'animation */
+    animation: descendreIntroduction 1s ease-out forwards;
+  }
+  
+  /* Animation d'introduction - Descente depuis le haut */
+  @keyframes descendreIntroduction {
+    0% {
+      transform: translateY(-100vh); /* Commence en dehors de la vue depuis le haut */
+      opacity: 0; /* Rend l'élément invisible au début */
+    }
+    100% {
+      transform: translateY(0); /* Position d'arrivée dans sa place normale */
+      opacity: 1; /* Restaure la visibilité */
+    }
+  }
+  
+
+
+  h2{
+    color: #003f5c;
+  }
+
+
+  @media (min-width: 1051px) and (max-width: 1200px) {
+    .intro-textAccueil {
+      font-size: 2em; /* Taille légèrement réduite pour les écrans plus petits */
+    }
+    .cardm,.cardmDevis{
+        font-size: 1.5em;
+    }
+    
+    }
+  @media (min-width: 769px) and (max-width: 1050px) {
+
+    .cardm{
+        width: 390px;
+        height: 125px;
+        font-size: 1.2em;
+    }
+    
+    .cardmDevis {
+        width: 125px;
+        height: 125px;
+        font-size: 1.2em;
+    }
+
+    .accueil-container {
+        display: flex;
+        gap: 5px;
+        padding: 0;
+        flex-wrap: wrap;
+        margin-top: 0px;
+        justify-content: center;
+        width: 100%;
+    }
+    .intro-textAccueil {
+        margin-bottom: 20px;
+        width: 420px;
+
+      }
+
+
+
+
+
+    } 
+    @media (min-width: 578px) and (max-width: 768px) {
+        .intro-textAccueil {
+        font-size: 14px; /* Réduit la taille du texte pour les petits écrans */
+        width: 50%;
+        margin-bottom: 20px;
+        font-size: 1.5em;
+        }
+        .accueil-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 0px;
+            justify-content: center;
+            font-size: 0.6em;
+        }
+        .slide,.cardm  {
+            height: 150px;
+        }
+        .cardmDevis{ 
+            width: 100px;
+            height: 100px;
+        }
+        .cardm{ 
+            width: 220px;
+            height: 100px;
+        }
+
+        .slide-content h3 {
+            font-size: 1em;
+        }
+
+        .slide-content p {
+            font-size: 1em;
+        }
+    }
+    @media (max-width: 577px) {
+        .intro-textAccueil {
+        font-size: 16px; /* Taille encore plus petite pour les téléphones */
+        width: 65%;
+        margin-bottom: 0px;
+        margin-top: -15px;
+        font-size: 1.5em;
+        }        
+
+        .accueil-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px; 
+            margin-bottom: 0; 
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;        
+        }
+        .cardm {            
+            width: 300px;
+            height: 150px;
+            font-size: 1.2em;
+        }
+
+        .cardmDevis  {          
+            width: 150px;
+            height: 150px;
+            font-size: 1.2em;
+        }
+        .carousel-container {
+            display: none;
+        }
+
+    
+    }
+    @media (max-width: 399px) {
+        .intro-textAccueil {
+        font-size: 21px; /* Taille encore plus petite pour les téléphones */
+        width: 300px;
+        margin-bottom: 0px;
+        margin-top: -15px;
+
+        }
+        .accueil-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 5px; 
+            margin-bottom: 0; 
+            justify-content: center;        
+        }
+        .cardm {            
+            width: 300px;
+            height: 150px;
+            font-size: 1.2em;
+        }
+
+        .cardmDevis  {          
+            width: 150px;
+            height: 150px;
+            font-size: 1.2em;
+        }
+        .carousel-container {
+            display: none;
+        }
+
+    
+    }
+
+
+
+
+
+
+
+
+
+  

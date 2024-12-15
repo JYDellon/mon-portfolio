@@ -1,0 +1,179 @@
+
+
+
+
+
+
+/* Style de base pour le formulaire */
+.form-contact-ui {
+  margin: 0 auto;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #054461;
+  padding: 10px 30px 10px 30px;
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 30px;
+  background: linear-gradient(to right, #bac1bb, #9bb8bc8d);
+  border: 1px solid #d7dcd8;
+  animation: descendreIntroduction 1s ease-out forwards;
+}
+
+/* Structure des lignes du formulaire */
+.ligne {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+  flex-wrap: wrap; /* Permet de gérer la disposition des champs en fonction de la largeur */
+}
+
+.champ {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.input, .textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.input:focus, .textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+
+
+.textarea {
+  resize: none;
+  height: 100px;
+}
+
+.bouton-envoyer {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.bouton-envoyer:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.bouton-envoyer:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.message-erreur {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.message-success {
+  color: green;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Media queries pour rendre le formulaire responsive */
+
+/* Écran de bureau */
+@media (min-width: 1024px) {
+  .ligne {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .champ {
+    flex: 1;
+  }
+
+  .textarea {
+    width: 100%;
+  }
+}
+
+/* Tablettes et petites résolutions */
+@media (max-width: 1024px) {
+  .ligne {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .champ {
+    width: 100%;
+  }
+
+  .textarea {
+    width: 100%;
+  }
+
+  .form-contact-ui {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .bouton-envoyer {
+    font-size: 14px;
+  }
+}
+
+/* Téléphones */
+@media (max-width: 600px) {
+  .form-contact-ui {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .ligne {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .champ {
+    width: 100%;
+  }
+
+  .input, .textarea {
+    font-size: 14px;
+  }
+
+  .bouton-envoyer {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+
+  .message-erreur, .message-success {
+    font-size: 12px;
+  }
+}
+
+/* Très petits écrans, comme les téléphones en mode portrait */
+@media (max-width: 400px) {
+  .form-contact-ui {
+    margin-top: -20px;
+    padding: 10px;
+  }
+
+  .bouton-envoyer {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

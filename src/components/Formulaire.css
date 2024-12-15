@@ -1,0 +1,513 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+  width: 100%; /* Modal occupe toute la largeur */
+  max-width: 1000px; /* Limite la largeur de la modal pour les grands écrans */
+  margin: 0 auto; /* Centrer la modale */
+  background: linear-gradient(to bottom right, #003f5c, #6a9cb8); /* Dégradé de couleur */
+  border-radius: 15px; /* Coins arrondis pour un effet moderne */
+  padding: 20px; /* Ajout de padding pour espacer le contenu */
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre douce pour un effet flottant */
+  transition: all 0.3s ease; /* Transition pour un effet fluide sur l'interaction */
+}
+
+.modal:hover {
+  transform: scale(1.02); /* Légère agrandissement lors du survol */
+}
+
+.entete-formulaire {
+  font-size: 1.75rem;
+  text-align: center;
+  color: white; /* Texte en blanc pour le contraste */
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.contenu-modal {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white; /* Texte en blanc pour une bonne lisibilité */
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.footerFormulaire {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+footer button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background: #003f5c; /* Couleur de fond du bouton */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Coins arrondis pour un look plus doux */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+footer button:hover {
+  background: #6a9cb8; /* Couleur au survol */
+  transform: translateY(-2px); /* Légère élévation du bouton au survol */
+}
+
+footer button:active {
+  transform: translateY(2px); /* Petite descente pour l'effet actif */
+}
+
+/* Media Query pour les petits écrans */
+
+
+
+/* Formulaire.css */
+
+.modal {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.entete-formulaire h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.progress-container {
+  height: 10px;
+  width: 100%;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+
+.contenu-modal {
+  margin-top: 20px;
+}
+
+
+.cards-container {
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+}
+
+.card {
+  padding: 15px;
+  background: linear-gradient(to bottom right, #003f5c, #6a9cb8); /* Dégradé de couleur */
+color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  color: #6a9cb8;
+}
+
+.card.selected {
+  background-color: #4caf50;
+  color: white;
+}
+
+fieldset {
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+legend {
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 0 10px;
+}
+
+.besoins-section .conteneur-besoins {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.besoins-container, .url-container, .description-container, .type-projet-container, .objectifs-container {
+  flex: 1;
+}
+
+.besoins-container label,
+.type-projet-option label,
+.graphisme-option label {
+  margin-right: 10px;
+}
+
+.besoins-option, .type-projet-option, .graphisme-option {
+  margin-bottom: 10px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  color: black;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.tailleTextarea2 {
+  height: 150px;
+}
+
+.tailleTextarea{
+  height: 50px;
+}
+
+.input-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  flex: 1;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;color: black;
+  border-radius: 5px;
+}
+
+.footerFormulaire {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.footerFormulaire button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.footerFormulaire button:hover {
+  background-color: #45a049;
+}
+
+.footerFormulaire button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+  width: 100vw; /* Prend toute la largeur de la fenêtre */
+  max-width: none; /* Supprime la limite de largeur max */
+  margin: 0; /* Enlève le margin pour remplir complètement l'écran */
+  background: linear-gradient(to bottom right, #003f5c, #6a9cb8); /* Dégradé de couleur */
+  border-radius: 15px; /* Coins arrondis pour un effet moderne */
+  padding: 20px; /* Ajout de padding pour espacer le contenu */
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre douce pour un effet flottant */
+  transition: all 0.3s ease; /* Transition pour un effet fluide sur l'interaction */
+}
+
+.modal:hover {
+  transform: scale(1.02); /* Légère agrandissement lors du survol */
+}
+
+.entete-formulaire {
+  font-size: 1.75rem;
+  text-align: center;
+  color: white; /* Texte en blanc pour le contraste */
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.contenu-modal {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white; /* Texte en blanc pour une bonne lisibilité */
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.footerFormulaire {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+footer button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background: #003f5c; /* Couleur de fond du bouton */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Coins arrondis pour un look plus doux */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+footer button:hover {
+  background: #6a9cb8; /* Couleur au survol */
+  transform: translateY(-2px); /* Légère élévation du bouton au survol */
+}
+
+footer button:active {
+  transform: translateY(2px); /* Petite descente pour l'effet actif */
+}
+
+/* Media Query pour les petits écrans */
+
+/* Media Query pour les très petits écrans (mobiles) */
+
+
+
+
+
+
+
+/* Structure générale de la modale */
+.modal {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+  width: 100%; /* Modal occupe toute la largeur */
+  max-width: 1000px; /* Limite la largeur de la modal pour les grands écrans */
+  margin: 0 auto; /* Centrer la modale */
+  border-radius: 15px; /* Coins arrondis pour un effet moderne */
+  padding: 20px; /* Ajout de padding pour espacer le contenu */
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre douce pour un effet flottant */
+  transition: all 0.3s ease; /* Transition pour un effet fluide sur l'interaction */
+  position: relative; /* Nécessaire pour le positionnement absolu du footer */
+}
+
+.modal:hover {
+  transform: scale(1.02); /* Légère agrandissement lors du survol */
+}
+
+/* Entête du formulaire */
+.entete-formulaire {
+  font-size: 1.75rem;
+  text-align: center;
+  color: white; /* Texte en blanc pour le contraste */
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Contenu du formulaire avec flex-grow pour s'étirer et occuper l'espace disponible */
+.contenu-modal {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white; /* Texte en blanc pour une bonne lisibilité */
+  font-size: 1.1rem;
+  line-height: 1.5;
+  gap: 2px;
+}
+
+/* Footer qui sera toujours positionné en bas de la modal */
+
+
+
+
+footer button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background: #003f5c; /* Couleur de fond du bouton */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Coins arrondis pour un look plus doux */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+footer button:hover {
+  background: #6a9cb8; /* Couleur au survol */
+  transform: translateY(-2px); /* Légère élévation du bouton au survol */
+}
+
+footer button:active {
+  transform: translateY(2px); /* Petite descente pour l'effet actif */
+}
+
+/* Media Query pour les petits écrans */
+
+/* Media Query pour les très petits écrans (mobiles) */
+
+
+
+
+
+
+
+
+
+
+
+
+.formulaire-devisS {
+  margin-bottom: 30px;
+margin: 0 auto;
+  margin-top: 20px;
+  font-weight: bold;
+  margin-bottom: -50px;
+  font-size: 20px;
+  color: #054461;
+  padding: 10px 30px 10px 30px;
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 30px;
+  background: #ffffff;
+  background: linear-gradient(to right, #bac1bb, #9bb8bc8d);    border: 1px solid #d7dcd8;
+  height: 70vh;
+  /* Ajout de l'animation */
+  animation: descendreIntroduction 1s ease-out forwards;
+}
+
+
+
+.footerFormulaire {      
+  bottom: 0;
+  width: 100%;
+  background: #003f5c; /* Fond sombre pour le footer */
+  padding: 15px;
+  border-radius: 8px 8px 0 0; /* Coins arrondis en haut du footer */
+}
+
+
+.footerFormulaire {
+  display: flex;
+  justify-content: space-evenly; 
+  align-items: center; /* Centre verticalement si nécessaire */
+  gap: 10px;
+  margin-top: auto; /* Place le footer en bas, en utilisant l'espace restant */
+  padding: 15px;
+  background: #003f5c00; /* Fond sombre pour le footer */
+  border-radius: 8px; /* Coins arrondis pour un look moderne */
+  width: 100%; /* Prend toute la largeur */
+  box-sizing: border-box; /* Assure que padding n'affecte pas la largeur totale */
+}
+
+/* Boutons dans le footer */
+.footerFormulaire button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background: #003f5c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.footerFormulaire button:hover {
+  background: #6a9cb8;
+  transform: translateY(-2px);
+}
+
+.footerFormulaire button:active {
+  transform: translateY(2px);
+}
+
+@media (max-width: 1050px)  {
+  .footerFormulaire {
+    gap: 15px;
+  }
+
+  .footerFormulaire button {
+    width: 100%; /* Boutons prennent toute la largeur */
+    padding: 15px;
+  }
+  .formulaire-devisS {
+    margin: 0 auto;
+  margin-top: -13px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #054461;
+  padding: 10px 30px 10px 30px;
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 30px;
+  background: #ffffff;
+  background: linear-gradient(to right, #bac1bb, #9bb8bc8d);    border: 1px solid #d7dcd8;
+  height: 70vh;
+  /* Ajout de l'animation */
+  animation: descendreIntroduction 1s ease-out forwards;
+}
+}
+@media (max-width: 768px) {
+  .footerFormulaire {
+    gap: 15px;
+  }
+
+  .footerFormulaire button {
+    width: 100%; /* Boutons prennent toute la largeur */
+    padding: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .formulaire-devisS{
+    
+    height: 75vh;
+  }
+  .modal {
+    width: 100%; /* Prendre toute la largeur de l'écran */
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .entete-formulaire {
+    font-size: 1.2rem; /* Réduction de la taille de la police pour les petits écrans */
+  }
+
+  .contenu-modal {
+    padding-bottom: 40px; /* Réduit l'espace en bas */
+  }
+
+  .footerFormulaire {
+    gap: 5px;
+  }
+
+  footer button {
+    font-size: 0.9rem; /* Réduit la taille de la police des boutons */
+    padding: 12px 18px;
+  }
+  .tailleTextarea2{
+    height: 100px;
+  }
+}
