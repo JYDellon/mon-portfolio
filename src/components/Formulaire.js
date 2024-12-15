@@ -71,14 +71,6 @@ const [isSuccessModalVisible, setIsSuccessModalVisible] = useState(false); // É
     setTelephone(value);
   };
 
-  // const formatTelephone = () => {
-  //   if (validateTelephone(telephone)) {
-  //     const formatted = telephone.replace(/(\d{2})(?=\d)/g, '$1-'); // Add dash every two digits
-  //     setTelephone(formatted);
-  //   } else {
-  //     alert("Le numéro de téléphone doit contenir exactement 10 chiffres.");
-  //   }
-  // };
 
   const formatTelephone = () => {
     if (validateTelephone(telephone)) {
@@ -134,56 +126,6 @@ const [isSuccessModalVisible, setIsSuccessModalVisible] = useState(false); // É
     calcProgression();
   }, [etape, etape3Sub]);
   
-//   const handleSuivant = (e) => {
-//     if (etape === 2) {
-//         if (!typeProjetSelectionne) {
-//             setErrorMessage("Veuillez choisir un type de projet avant de continuer.");
-//             setIsModalVisible(true); // Afficher la modale d'erreur
-//             return;
-//         }
-//         if (
-//             typeProjetSelectionne === "refonte" &&
-//             (!urlSiteRefonte.trim() || !objectifs.trim())
-//         ) {
-//             setErrorMessage(
-//                 "Pour une refonte, veuillez remplir l'URL du site à refondre et vos objectifs avant de continuer."
-//             );
-//             setIsModalVisible(true);
-//             return;
-//         }
-//     }
-
-//     if (etape === 3) {
-//         if (etape3Sub === 2 && !graphisme) {
-//             setErrorMessage("Veuillez sélectionner une option de graphisme avant de continuer.");
-//             setIsModalVisible(true);
-//             return;
-//         }
-//         if (etape3Sub < 2) {
-//             setEtape3Sub(etape3Sub + 1);
-//         } else {
-//             setEtape(etape + 1);
-//         }
-//     } else if (etape === 4) {
-//         if (!nom.trim() || !prenom.trim()) {
-//             setErrorMessage("Veuillez remplir votre nom et prénom avant de continuer.");
-//             setIsModalVisible(true);
-//             return;
-//         }
-//         if (!email.trim() || !validateEmail(email)) {
-//             setErrorMessage("Veuillez saisir un email valide avant de continuer.");
-//             setIsModalVisible(true);
-//             return;
-//         }
-
-//         // Le numéro de téléphone devient facultatif, pas de vérification ici.
-//         envoyerEmail(e);
-//     } else {
-//         setEtape(etape + 1);
-//     }
-// };
-
-
 const handleSuivant = (e) => {
   if (etape === 2) {
       if (!typeProjetSelectionne) {
@@ -323,7 +265,7 @@ const handleSuivant = (e) => {
               <div>
                 <p style={{ textAlign: 'center' }} className="mep">Quelle prestation vous intéresse ?</p>
                 <div className="cards-container">
-                  {['site vitrine', 'site e-commerce', 'site personnalisé', 'hébergement / nom de domaine'].map((service) => (
+                  {['site vitrine', '>Site e-commerce', 'Site personnalisé', 'Hébergement / Nom de domaine'].map((service) => (
                     <div
                       key={service}
                       className={`card ${prestation === service ? 'selected' : ''}`}

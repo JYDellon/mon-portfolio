@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
+import fondDEcranMenu from '../assets/images/fondecran/fond12.jpg';
 
 function Navbar({ onLinkClick }) {
   const location = useLocation();
@@ -44,7 +45,7 @@ function Navbar({ onLinkClick }) {
       </div>
 
       {/* Modale pour les petits écrans */}
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <div className="modalXXX" onClick={closeModal}>
           <div className="modalXXX-content">
             <nav className="modalXXX-menu">
@@ -107,7 +108,77 @@ function Navbar({ onLinkClick }) {
             </nav>
           </div>
         </div>
-      )}
+      )} */}
+
+{isModalOpen && (
+  <div
+    className="modalXXX"
+    style={{ backgroundImage: `url(${fondDEcranMenu})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+    onClick={closeModal}
+  >
+    <div className="modalXXX-content">
+      <nav className="modalXXX-menu">
+        <ul>
+          <li>
+            <Link
+              to="/"
+              className={isActiveLink('/') ? 'active' : ''}
+              onClick={closeModal}
+            >
+              Accueil
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/a-propos"
+              className={isActiveLink('/a-propos') ? 'active' : ''}
+              onClick={closeModal}
+            >
+              A propos de
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/nos-services"
+              className={isActiveLink('/nos-services') ? 'active' : ''}
+              onClick={closeModal}
+            >
+              Nos solutions web
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/portfolio"
+              className={isActiveLink('/portfolio') ? 'active' : ''}
+              onClick={closeModal}
+            >
+              Etudes de cas
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className={isActiveLink('/contact') ? 'active' : ''}
+              onClick={closeModal}
+            >
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/rgpd"
+              className={isActiveLink('/rgpd') ? 'active' : ''}
+              onClick={closeModal}
+            >
+              RGPD
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+)}
+
 
       {/* Menu déroulant (restant inchangé) */}
       <nav className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
