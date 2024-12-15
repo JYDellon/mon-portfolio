@@ -782,9 +782,6 @@
   }
 }
 
-
-/* Responsiveness pour les petits écrans */
-
 @media (max-width: 768px) {
   .contact-layout {
       flex-direction: column;
@@ -798,7 +795,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .contact-container {
       padding: 1rem;
       background-color: rgba(225, 255, 0, 0);
@@ -853,6 +850,81 @@
   
 
 }
+
+@media (max-width: 399) {
+  .contact-container {
+      padding: 1rem;
+      background-color: rgba(225, 255, 0, 0);
+      height: 450px;
+      overflow-y: auto;
+      margin-top: -30px;
+  }
+
+  .form-header {
+      gap: 1rem;
+      margin-bottom: -100px;
+  }
+
+  .form-button {
+      width: 100%;
+      padding: 1rem;
+  }
+
+  .contact-layout {
+      flex-direction: column;   
+  }
+
+  .left-section, .center-section, .right-section {
+      width: 25%;
+  }
+
+  .availability-card, .phone-card, .mail-card, .social-cardContact {
+      width: 100%;
+  }
+  
+  .social-icon {
+      font-size: 1.2rem;
+  }
+
+  .scroll-to-top {
+      font-size: 1.2rem;
+  }
+
+  iframe {
+      height: 300px; 
+  }
+  .left-section,.center-section,.right-section,.availability-card, .phone-card, .mail-card, .social-cardContact {
+    width: 80%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

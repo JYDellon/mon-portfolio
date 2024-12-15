@@ -226,7 +226,8 @@
 /* En-tête de la section */
 .rgpd-toggle-header {
   margin: 0 auto;
-  width: 3549.5x;
+  width: 100%;
+  min-width: 250px;
   height: 50px;
   display: flex;
   text-align: center;
@@ -536,18 +537,26 @@ height: 50px;
   }
   
 }
-@media (max-width: 360px) {
+@media (max-width: 399px) {
   .intro-textRgpd{
     font-size: 16px; /* Taille encore plus petite pour les téléphones */
     max-width: 300px; /* Utilise toute la largeur disponible */
     padding: 0 10px; /* Moins de padding pour éviter le débordement */
     width: 300px;
+    font-size: 1.4em;
     margin-bottom: 0px;
     margin-top: -30px;
+    text-align: center;
   }
   .toggle-container{
     height: 350px;
   }
+
+  .rgpd-toggle-container {
+    min-width: 310px;
+    
+  }
+
 }
 
 h2{

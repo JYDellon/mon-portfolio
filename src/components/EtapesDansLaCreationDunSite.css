@@ -2,7 +2,6 @@
 .etapes-container {
     width: 550px;
     margin: 0 auto;
-    padding: 20px;
     background-color: rgba(51, 255, 0, 0);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -317,7 +316,6 @@ h2{
 
 .etape-toggle-header {
   width: 100%;
-min-width: 200px;
 border: 1px slid white;
 }
 }
@@ -329,13 +327,13 @@ border: 1px slid white;
     padding: 0 10px;
     margin-top: -20px;
     width: 90%;
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 
   .etapes-container {
     width: 94.1%;
     background-color: rgba(169, 254, 0, 0);
-    height: 460px;
+    height: 100%;
 }
 
 /* Conteneur pour chaque étape */
@@ -350,7 +348,6 @@ border: 1px slid white;
 
 .etape-toggle-header {
   width: 100%;
-min-width: 200px;
 border: 1px slid white;
 }
 }
