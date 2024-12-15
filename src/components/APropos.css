@@ -188,11 +188,12 @@
     }
     .chapitre-toggle-details {
       font-size: 0.9rem;
+      padding: 6px 10px 0px 10px;
     }
   }
 
   .texte{
-    margin:0 15px 10px 10px;
+    text-align: justify;
   }
 
 
