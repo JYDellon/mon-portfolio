@@ -2,7 +2,7 @@
   "name": "mon-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jydellon.github.io/test/",
+  "homepage": "https://jydellon.github.io/mon-portfolio/",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.13.5",
