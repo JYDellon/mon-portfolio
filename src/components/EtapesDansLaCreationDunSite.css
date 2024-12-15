@@ -270,7 +270,7 @@ h2{
 @media (max-width: 992px) {
   .intro-text {
     font-size: 16px;
-    max-width: 420px;
+    max-width: 800px;
     font-size: 1.5em;
   }
 }
@@ -278,9 +278,15 @@ h2{
 @media (max-width: 768px) {
   .intro-text {
     font-size: 14px; /* Réduit la taille du texte pour les petits écrans */
-    max-width: 400px;
+    max-width: 800px;
     font-size: 1.5em;
   }
+
+  .etapes-container {
+    width: 94.1%;
+    background-color: rgba(169, 254, 0, 0);
+    height: 410px;
+}
 }
 
 @media (max-width: 576px) {
@@ -296,7 +302,7 @@ h2{
   .etapes-container {
     width: 94.1%;
     background-color: rgba(169, 254, 0, 0);
-    height: 350px;
+    height: 430px;
 }
 
 /* Conteneur pour chaque étape */
@@ -329,7 +335,7 @@ border: 1px slid white;
   .etapes-container {
     width: 94.1%;
     background-color: rgba(169, 254, 0, 0);
-    height: 350px;
+    height: 460px;
 }
 
 /* Conteneur pour chaque étape */
