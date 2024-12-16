@@ -516,12 +516,15 @@ margin: 0 auto;
   .tailleTextarea2{
     height: 100px;
   }
+
+
+  
+
+
 }
 
 @media (max-width: 399px) {
-  .formulaire-devisS{
-    height: 70vh;
-  }
+
   .modal {
     width: 100%; /* Prendre toute la largeur de l'écran */
     max-width: 100%;
@@ -547,6 +550,35 @@ margin: 0 auto;
   .tailleTextarea2{
     height: 100px;
   }
+
+.fieldset-type-projet{
+  margin-top: 10px;
+  height: 65vh;
+}
+
+.fonctionnalites-container .fonctionnalites-section{
+  height: 95vh;
+}
+
+.graphisme-container .graphisme-section{
+  height: 95vh;  
+}
+
+.besoins-option, .type-projet-option, .graphisme-option {
+  margin-bottom: 10px;
+}
+
+/* Formulaire général */
+.formulaire-devisS {
+  min-height: 120vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Assure que le contenu et le footer soient espacés */
+}
+
+
+
+
 }
 
 .mep{
@@ -618,13 +650,7 @@ margin: 0 auto;
 
 
 
-/* Formulaire général */
-.formulaire-devisS {
-  min-height: 30vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Assure que le contenu et le footer soient espacés */
-}
+
 
 /* Footer Formulaire */
 .footerFormulaire {
@@ -824,38 +850,6 @@ input[type="radio"] {
 
 /* Media query for screens <= 767px */
 @media (max-width: 767px) {
-  
-  .intro-formulaire {
-    margin-bottom: 20px;
-  }
-
-
-
-
-  .intro-content {
-    background-color: #f0f0f0;
-  }
-
-.formulaire-devisS{
-  margin-bottom: 200px;
-}
-
-.fonctionnalites-section,.graphisme-section{
-  height:50vh;
-}
-
-
-.formulaire-devisS{
-  height: 75vh;
-}
-
-
-}
-
-
-
-/* Media query for screens <= 767px */
-@media (max-width: 399x) {
   
   .intro-formulaire {
     margin-bottom: 20px;

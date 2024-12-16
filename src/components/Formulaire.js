@@ -273,13 +273,13 @@ if (etape === 3) {
 
 
 
-    {/* Progress Bar */}
-    <div className="progress-bar-container">
-  <div
-    className="progress-bar"
-    style={{ width: `${progression}%` }}
-  />
-</div>
+                {/* Progress Bar */}
+                <div className="progress-bar-container">
+              <div
+                className="progress-bar"
+                style={{ width: `${progression}%` }}
+              />
+            </div>
 
 
 
