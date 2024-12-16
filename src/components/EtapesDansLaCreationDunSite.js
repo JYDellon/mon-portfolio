@@ -13,9 +13,9 @@ function EtapesDansLaCreationDunSite() {
     const etapesDetails = [
         "Nous commencerons par une discussion pour comprendre vos attentes et objectifs. Cette étape essentielle nous permettra de poser les bases d’un site qui correspond parfaitement à vos besoins.",
         "À partir de vos idées, nous concevons des maquettes ou des schémas détaillés, accompagnés d’une proposition sur-mesure. Vous aurez ainsi une vision claire du futur site et pourrez valider son design avant de passer au développement.",
-        "Une fois la maquette approuvée, nous développons votre site avec soin. Chaque fonctionnalité est intégrée et testée pour garantir un rendu optimal et conforme à vos attentes.",
-        "Une fois le site finalisé, nous procédons à sa mise en ligne. Nous vérifions qu’il est parfaitement fonctionnel et prêt à être utilisé par vos visiteurs.",
-        "Après la livraison, nous restons disponibles pour vous accompagner. Nous proposons un suivi personnalisé pour effectuer des mises à jour, des ajustements ou répondre à vos besoins évolutifs.",
+        "Une fois la maquette validée, nous développons votre site avec soin, en intégrant chaque fonctionnalité selon vos besoins. Chaque étape est minutieusement testée pour garantir un rendu performant et conforme à vos attentes.",
+        "Une fois votre site finalisé, nous le mettons en ligne et veillons à ce qu’il soit parfaitement fonctionnel, prêt à offrir la meilleure expérience à vos visiteurs.",
+        "Après la mise en ligne, nous restons à vos côtés pour un suivi personnalisé. Nous vous accompagnons dans l’évolution de votre site, en effectuant des mises à jour, des ajustements, ou en répondant à vos besoins changeants.",
     ];
 
     const [etapeSelectionnee, setEtapeSelectionnee] = useState(null);
