@@ -87,6 +87,24 @@ const [isSuccessModalVisible, setIsSuccessModalVisible] = useState(false); // É
     return /^[A-Za-zÀ-ÖØ-öø-ÿ \-]+$/.test(value); // Allowing letters, spaces, and hyphens
   };
   
+
+
+
+
+
+  const validateUrl = (url) => {
+    const urlRegex = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$/;
+    return urlRegex.test(url);
+  };
+
+
+
+
+
+
+
+
+
   const validateTelephone = (value) => {
     return /^\d{10}$/.test(value); // Ensuring the telephone has exactly 10 digits
   };
@@ -126,61 +144,62 @@ const [isSuccessModalVisible, setIsSuccessModalVisible] = useState(false); // É
     calcProgression();
   }, [etape, etape3Sub]);
   
+
 const handleSuivant = (e) => {
   if (etape === 2) {
-      if (!typeProjetSelectionne) {
-          setErrorMessage("Veuillez choisir un type de projet avant de continuer.");
-          setIsModalVisible(true); // Afficher la modale d'erreur
-          return;
-      }
+    if (!typeProjetSelectionne) {
+        setErrorMessage("Veuillez choisir un type de projet avant de continuer.");
+        setIsModalVisible(true); // Afficher la modale d'erreur
+        return;
+    }
 
-      // Si le type de projet est "création" et que les objectifs ne sont pas renseignés
-      if (typeProjetSelectionne === "création" && !objectifs.trim()) {
-          setErrorMessage("Veuillez remplir 'Vos objectifs' avant de continuer.");
-          setIsModalVisible(true);
-          return;
-      }
+    // Si le type de projet est "création" et que les objectifs ne sont pas renseignés
+    if (typeProjetSelectionne === "création" && !objectifs.trim()) {
+        setErrorMessage("Veuillez remplir 'Vos objectifs' avant de continuer.");
+        setIsModalVisible(true);
+        return;
+    }
 
-      if (
-          typeProjetSelectionne === "refonte" &&
-          (!urlSiteRefonte.trim() || !objectifs.trim())
-      ) {
-          setErrorMessage(
-              "Pour une refonte, veuillez remplir l'URL du site à refondre ainsi que vos objectifs avant de continuer."
-          );
-          setIsModalVisible(true);
-          return;
-      }
-  }
+    if (
+        typeProjetSelectionne === "refonte" &&
+        (!urlSiteRefonte.trim() || !objectifs.trim() || !validateUrl(urlSiteRefonte))  // Validation de l'URL
+    ) {
+        setErrorMessage(
+            "Pour une refonte, veuillez remplir l'URL du site à refondre ainsi que vos objectifs avant de continuer."
+        );
+        setIsModalVisible(true);
+        return;
+    }
+}
 
-  if (etape === 3) {
-      if (etape3Sub === 2 && !graphisme) {
-          setErrorMessage("Veuillez sélectionner une option de graphisme avant de continuer.");
-          setIsModalVisible(true);
-          return;
-      }
-      if (etape3Sub < 2) {
-          setEtape3Sub(etape3Sub + 1);
-      } else {
-          setEtape(etape + 1);
-      }
-  } else if (etape === 4) {
-      if (!nom.trim() || !prenom.trim()) {
-          setErrorMessage("Veuillez remplir votre nom et prénom avant de continuer.");
-          setIsModalVisible(true);
-          return;
-      }
-      if (!email.trim() || !validateEmail(email)) {
-          setErrorMessage("Veuillez saisir un email valide avant de continuer.");
-          setIsModalVisible(true);
-          return;
-      }
+if (etape === 3) {
+    if (etape3Sub === 2 && !graphisme) {
+        setErrorMessage("Veuillez sélectionner une option de graphisme avant de continuer.");
+        setIsModalVisible(true);
+        return;
+    }
+    if (etape3Sub < 2) {
+        setEtape3Sub(etape3Sub + 1);
+    } else {
+        setEtape(etape + 1);
+    }
+} else if (etape === 4) {
+    if (!nom.trim() || !prenom.trim()) {
+        setErrorMessage("Veuillez remplir votre nom et prénom avant de continuer.");
+        setIsModalVisible(true);
+        return;
+    }
+    if (!email.trim() || !validateEmail(email)) {
+        setErrorMessage("Veuillez saisir un email valide avant de continuer.");
+        setIsModalVisible(true);
+        return;
+    }
 
-      // Le numéro de téléphone devient facultatif, pas de vérification ici.
-      envoyerEmail(e);
-  } else {
-      setEtape(etape + 1);
-  }
+    // Le numéro de téléphone devient facultatif, pas de vérification ici.
+    envoyerEmail(e);
+} else {
+    setEtape(etape + 1);
+}
 };
 
 
@@ -263,17 +282,36 @@ const handleSuivant = (e) => {
       {isModalVisible && <ModalError message={errorMessage} onClose={closeModal} />}
   {isSuccessModalVisible && <ModalSuccess message="Votre demande a été envoyée avec succès !" onClose={closeSuccessModal} />}
       <div className="formulaire-devisS">
+
+
             {etape === 1 && (
-              <div>
-                <p style={{ textAlign: 'center' }} className="mep">Quelle prestation vous intéresse ?</p>
+              <div className="step-container">
+                <div className="intro-formulaire">
+                  <h2>Obtenez un devis personnalisé</h2>
+                  <p>
+                    Pour nous permettre de vous fournir un devis précis, nous vous invitons à remplir ce formulaire. Cela nous aidera à mieux comprendre vos besoins et à définir les services les mieux adaptés à votre projet.
+                  </p>
+                  <p>
+                    Le formulaire se compose de plusieurs étapes simples. N'hésitez pas à revenir en arrière si vous avez besoin de modifier vos réponses.
+                  </p>
+                  <p>
+                    Toutes vos informations resteront confidentielles et ne seront utilisées que dans le cadre de votre demande.
+                  </p>
+                </div>
+
+                <p className="selection-header">Quelle prestation vous intéresse ?</p>
+
                 <div className="cards-container">
-                  {['site vitrine', '>Site e-commerce', 'Site personnalisé', 'Hébergement / Nom de domaine'].map((service) => (
+                  {['site vitrine', 'Site e-commerce', 'Site personnalisé', 'Hébergement / Nom de domaine'].map((service) => (
                     <div
                       key={service}
                       className={`card ${prestation === service ? 'selected' : ''}`}
                       onClick={() => handleSelection(service)}
+                      role="button"
+                      aria-label={`Choisir ${service}`}
+                      tabIndex={0}
                     >
-                      {service}
+                      <h3>{service}</h3>
                     </div>
                   ))}
                 </div>
@@ -281,11 +319,11 @@ const handleSuivant = (e) => {
             )}
 
             {etape === 2 && (
-              <div>
+              <div className="etape-2-container">
                 {prestation === 'hébergement / nom de domaine' && (
-                  <div>
-                    <h1>Vos besoin :</h1>
-                    <fieldset className="besoins-section">
+                  <div className="besoins-section">
+                    <h1>Vos besoins :</h1>
+                    <fieldset className="fieldset-besoins">
                       <legend>Besoins spécifiques</legend>
                       <div className="conteneur-besoins">
                         <div className="colonne-gauche">
@@ -293,17 +331,18 @@ const handleSuivant = (e) => {
                             {[
                               { name: "hebergement", label: "Hébergement" },
                               { name: "seo", label: "Référencement naturel (SEO)" },
-                              { name: "vitesse", label: "Amélioration de la vitesse de chargement de mes pages" },
+                              { name: "vitesse", label: "Amélioration de la vitesse de chargement" },
                               { name: "nomDomaine", label: "Nom de domaine" },
                               { name: "migration", label: "Migration d'hébergement" }
                             ].map(({ name, label }) => (
                               <div key={name} className="besoin-option">
-                                <label className="ecart">
+                                <label className="checkbox-label">
                                   <input
                                     type="checkbox"
                                     name={name}
                                     checked={besoinsHébergement[name]}
                                     onChange={handleBesoinsChange}
+                                    className="checkbox-input"
                                   />
                                   <span className="label-text">{label}</span>
                                 </label>
@@ -314,22 +353,24 @@ const handleSuivant = (e) => {
 
                         <div className="colonne-droite">
                           <div className="url-container">
-                            <label htmlFor="urlSite">Quelle est l'URL de votre site si vous en avez un ?</label>
+                            <label htmlFor="urlSite" className="label-text">Quelle est l'URL de votre site ?</label>
                             <textarea
                               id="urlSite"
                               value={urlSite}
                               onChange={(e) => setUrlSite(e.target.value)}
-                              className="tailleTextarea"
+                              className="textarea-url"
+                              placeholder="Exemple : www.monsite.com"
                             />
                           </div>
 
                           <div className="description-container">
-                            <label htmlFor="descriptionBesoins">Description détaillée de votre besoin :</label>
+                            <label htmlFor="descriptionBesoins" className="label-text">Description détaillée de votre besoin :</label>
                             <textarea
                               id="descriptionBesoins"
                               value={descriptionBesoins}
                               onChange={(e) => setDescriptionBesoins(e.target.value)}
-                              className="tailleTextarea"
+                              className="textarea-description"
+                              placeholder="Décrivez vos besoins spécifiques..."
                             />
                           </div>
                         </div>
@@ -339,67 +380,69 @@ const handleSuivant = (e) => {
                 )}
 
                 {prestation !== 'hébergement / nom de domaine' && (
-                  <div>
-                    <div className="type-projet-container">
-                    <fieldset className="type-projet-section">
+                  <div className="type-projet-container">
+                    <fieldset className="fieldset-type-projet">
                       <legend>Type de projet</legend>
-                          <div className="type-projet-option">
-                            <label>
-                              <input
-                                type="radio"
-                                name="typeProjet"
-                                value="création"
-                                checked={typeProjetSelectionne === 'création'}
-                                onChange={(e) => {
-                                  setTypeProjetSelectionne(e.target.value);
-                                  setRefonteChoisie(false);
-                                }}
-                              />
-                              <span className="label-text">Création d'un {prestation}</span>
-                            </label>
-                          </div>
-                          <div className="type-projet-option">
-                            <label>
-                              <input
-                                type="radio"
-                                name="typeProjet"
-                                value="refonte"
-                                checked={typeProjetSelectionne === 'refonte'}
-                                onChange={(e) => {
-                                  setTypeProjetSelectionne(e.target.value);
-                                  setRefonteChoisie(true);
-                                }}
-                              />
-                              <span className="label-text">Vous avez site à refondre</span>
-                            </label>
-                          </div>
+                      <div className="type-projet-options">
+                        <div className="type-projet-option">
+                          <label>
+                            <input
+                              type="radio"
+                              name="typeProjet"
+                              value="création"
+                              checked={typeProjetSelectionne === 'création'}
+                              onChange={(e) => {
+                                setTypeProjetSelectionne(e.target.value);
+                                setRefonteChoisie(false);
+                              }}
+                            />
+                            <span className="label-text">Création d'un {prestation}</span>
+                          </label>
+                        </div>
+                        <div className="type-projet-option">
+                          <label>
+                            <input
+                              className="label-text2"
+                              type="radio"
+                              name="typeProjet"
+                              value="refonte"
+                              checked={typeProjetSelectionne === 'refonte'}
+                              onChange={(e) => {
+                                setTypeProjetSelectionne(e.target.value);
+                                setRefonteChoisie(true);
+                              }}
+                            />
+                            <span className="label-text2 label-text">Vous avez un site à refondre</span>
+                          </label>
+                        </div>
+                      </div>
 
 
-                    {refonteChoisie && (
-                      <div className="url-refonte-container">
-                        <label htmlFor="urlSiteRefonte"> l'URL du site :</label>
+
+                      <div className="objectifs-container">
+                        <label htmlFor="objectifs" className="label-text">Vos objectifs :</label>
                         <textarea
-                          id="urlSiteRefonte"
-                          value={urlSiteRefonte}
-                          onChange={(e) => setUrlSiteRefonte(e.target.value)}
-                          className="tailleTextarea"
+                          id="objectifs"
+                          value={objectifs}
+                          onChange={(e) => setObjectifs(e.target.value)}
+                          required
+                          className="textarea-objectifs"
+                          placeholder="Décrivez les objectifs de votre projet..."
                         />
                       </div>
-                    )}
-
-
-                    <div className="objectifs-container">
-                      <label htmlFor="objectifs">Vos objectifs :</label>
-                      <textarea
-                        id="objectifs"
-                        value={objectifs}
-                        onChange={(e) => setObjectifs(e.target.value)}
-                        required
-                        className="tailleTextarea2"
-                      />
-                    </div>
-                    </fieldset>    
-                    </div>
+                      {refonteChoisie && (
+                        <div className="url-refonte-container">
+                          <label htmlFor="urlSiteRefonte" className="label-text">URL du site à refondre :</label>
+                          <textarea
+                            id="urlSiteRefonte"
+                            value={urlSiteRefonte}
+                            onChange={(e) => setUrlSiteRefonte(e.target.value)}
+                            className="textarea-url"
+                            placeholder="Exemple : www.monsite.com"
+                          />
+                        </div>
+                      )}
+                    </fieldset>
                   </div>
                 )}
               </div>
