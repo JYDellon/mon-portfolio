@@ -229,7 +229,7 @@ const handleSuivant = (e) => {
     };
   
     try {
-      const response = await fetch('https://serveraeonixemail.vercel.app/api/devis', {
+      const response = await fetch('http://localhost:5000/api/devis', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

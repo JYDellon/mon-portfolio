@@ -32,7 +32,7 @@ const FormulaireContact = ({ onClose }) => {
     setIsSubmitting(true);
     setError(null);
     try {
-      const response = await fetch('https://serveraeonixemail.vercel.app/api/deviscontact', {
+      const response = await fetch('https://serveraeonixemail.vercel.app/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
