@@ -2,226 +2,222 @@
 
 
 
-  :root {
-    /* Variables globales */
-    --couleur-primaire: #003f5c;
-    --couleur-secondaire: #6a9cb8;
-    --couleur-clair: #eef3f8;
-    --couleur-clair-2: #f0f8ff;
-    --transition: 0.3s ease-in-out;
-    --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    --hover-bg: #7c004e;
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  /* Variables globales */
+  --couleur-primaire: #003f5c;
+  --couleur-secondaire: #6a9cb8;
+  --couleur-clair: #eef3f8;
+  --couleur-clair-2: #f0f8ff;
+  --transition: 0.3s ease-in-out;
+  --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  --hover-bg: #7c004e;
+}
+
+/* Styles de base */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Conteneur principal */
+.apropos-container {
+  background-color: rgba(255, 0, 0, 0);
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  height: 500px;
+  margin-top: 20px;
+  color: var(--couleur-primaire); 
+
+  overflow-y: auto;
+}
+
+/* Chapitre Toggle Container commun */
+.chapitre-toggle-container {
+  cursor: pointer;
+  width: 95%;
+  max-width: 420px;
+  border-radius: 30px;
+  box-shadow: var(--box-shadow);
+  transition: transform var(--transition);
+  background-color: #ffffff;
+  margin: 0 auto;
   
-  /* Styles de base */
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Conteneur principal */
-  .apropos-container {
-    background-color: #ff00a200;
-    display: flex;
-    margin: 0 auto;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    height: 500px;
-    margin: 0 auto;
-    color: var(--couleur-primaire); 
-    overflow-y: auto;
-    margin-top: 20px;
-  }
-  
-  /* Chapitre Toggle Container commun */
-  .chapitre-toggle-container {
-    cursor: pointer;
-    width: 95%;
-    max-width: 420px;
-    
-    /* border: 1px solid var(--couleur-secondaire); */
-    border-radius: 30px;
-    box-shadow: var(--box-shadow);
-    transition: transform var(--transition);
-    background-color: rgb(255, 255, 255);
-    margin: 0 auto;
-  }
-  
-  /* En-tête du Toggle */
-  .chapitre-toggle-header {
-    background: linear-gradient(to right, #003f5c, #6a9cb8);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    border-radius: 50px;
-    height: 50px;
-    text-align: center;
-    transition: background-color var(--transition);
-    border:1px solid white;
-    margin-top: 0px;
-    margin-bottom: -5px;  }
-  
+}
+
+/* En-tête du Toggle */
+.chapitre-toggle-header {
+  background: linear-gradient(to right, #003f5c, #6a9cb8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 50px;
+  height: 50px;
+  text-align: center;
+  transition: background-color var(--transition);
+  border: 1px solid white;
+  margin-bottom: -5px;
+}
+
 /* Animation au survol */
 .chapitre-toggle-header:hover {
   transform: scale(1.02);
   border: 1px solid #ffffff;
 }
 
-  /* Contenu déroulé avec une animation */
-  .chapitre-toggle-details {
-    padding: 0 10px;
+/* Contenu déroulé avec une animation */
+.chapitre-toggle-details {
+  padding: 0 10px;
+  opacity: 0;
+  max-height: 0;
+  transition: max-height var(--transition), opacity var(--transition);
+}
+
+/* État visible */
+.chapitre-toggle-details.show {
+  opacity: 1;
+  max-height: 400px; /* Ajuster selon le contenu */
+}
+
+/* Effets d'animation sur l'en-tête actif */
+.chapitre-toggle-header.active {
+  background-color: var(--hover-bg);
+}
+
+/* Animation depuis la gauche */
+@keyframes entrerGauche {
+  from {
+    transform: translateX(-100%);
     opacity: 0;
-    max-height: 0;
-    transition: max-height var(--transition), opacity var(--transition);
   }
-  
-  /* État visible */
-  .chapitre-toggle-details.show {
+  to {
+    transform: translateX(0);
     opacity: 1;
-    max-height: 150px; /* Ajuster selon le contenu */
-  }
-  
-  /* Effets d'animation sur l'en-tête actif */
-  .chapitre-toggle-header.active {
-    background-color: var(--hover-bg);
-  }
-  
-  /* Animation depuis la gauche */
-  @keyframes entrerGauche {
-    from {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  /* Animation depuis la droite */
-  @keyframes entrerDroite {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  /* Chapitre Toggle avec animation dynamique */
-  .chapitre-toggle-container.gauche {
-    animation: entrerGauche 0.5s ease-out both;
-  }
-  
-  .chapitre-toggle-container.droite {
-    animation: entrerDroite 0.5s ease-out both;
-  }
-  
-  
-  /* Styles des cartes interactives avec Hover */
-  .chapitre-card {
-    background: linear-gradient(to right, var(--couleur-primaire), var(--couleur-secondaire));
-    color: white;
-    padding: 12px 20px;
-    border-radius: 10px;
-    width: 250px;
-    height: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    opacity: 0.9;
-    transition: transform 0.9s ease-in-out, box-shadow var(--transition);
-    box-shadow: var(--box-shadow);
-  }
-  
-  .chapitre-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
-  }
-  
-  .chapitre-card.active {
-    background-color: var(--hover-bg);
-  }
-  
-  /* Responsive Design */
-  @media (min-width: 577px) and (max-width: 768px) {
-    .apropos-container {
-      padding: 15px;
-      margin-top: -30px;
-    }
-  
-    .chapitre-toggle-container {
-      width: 90%;
-    }
-  
-    .chapitre-toggle-header,
-    .chapitre-toggle-details {
-      font-size: 14px;
-    }
-
-    
-  }
-  
-  @media (max-width: 576px) {
-    .chapitre-toggle-container {
-      width: 80%;
-    }
-    .apropos-container {
-      padding: 15px;
-      margin-top: -30px;
-      height: 450px;
-      width: 100%;
-      background-color: #ff008000;
-    }
-    .chapitre-toggle-header {
-      font-size: 1rem;
-      width: 100%;
-    }
-    .chapitre-toggle-container {
-      width: 100%;
-      min-width: 300px;
-      background-color: #ffffff;
-    }
-    .chapitre-toggle-details {
-      font-size: 0.9rem;
-      background-color: #007c3000;
-      /* padding: 1px 10px 5px 10px; */
-      /* height: 150px; */
-      padding-top: 5px;
-      
-    }
-  }
-
-  .texte{
-    text-align: justify;
-    padding-top:0px;
-    padding-left: 1px;
-    padding-right: 1px;
-  }
-
-
-
-
-  
-/* Animation d'introduction - Descente depuis le haut */
-@keyframes descendreIntroduction {
-  0% {
-    transform: translateY(-100vh); /* Commence en dehors de la vue depuis le haut */
-    opacity: 0; /* Rend l'élément invisible au début */
-  }
-  100% {
-    transform: translateY(0); /* Position d'arrivée dans sa place normale */
-    opacity: 1; /* Restaure la visibilité */
   }
 }
 
+/* Animation depuis la droite */
+@keyframes entrerDroite {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
+/* Chapitre Toggle avec animation dynamique */
+.chapitre-toggle-container.gauche {
+  animation: entrerGauche 0.5s ease-out both;
+}
+
+.chapitre-toggle-container.droite {
+  animation: entrerDroite 0.5s ease-out both;
+}
+
+/* Responsive Design */
+@media (min-width: 577px) and (max-width: 768px) {
+  .apropos-container {
+    padding: 15px;
+    margin-top: -30px;
+  }
+
+  .chapitre-toggle-container {
+    width: 90%;
+  }
+
+  .chapitre-toggle-header,
+  .chapitre-toggle-details {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .chapitre-toggle-container {
+    width: 80%;
+  }
+  .apropos-container {
+    padding: 15px;
+    margin-top: -30px;
+    height: 450px;
+    width: 100%;
+    background-color: var(--couleur-clair);
+  }
+  .chapitre-toggle-header {
+    font-size: 1rem;
+    width: 100%;
+  }
+  .chapitre-toggle-container {
+    width: 100%;
+    min-width: 300px;
+    background-color: #ffffff;
+  }
+  .chapitre-toggle-details {
+    font-size: 0.9rem;
+    background-color: #f8f9fa;
+    padding-top: 5px;
+  }
+}
+
+/* Texte justifié */
+.texte {
+  text-align: justify;
+  padding: 10px;
+  line-height: 1.5;
+}
