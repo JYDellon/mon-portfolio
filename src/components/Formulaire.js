@@ -210,6 +210,7 @@ const handleSuivant = (e) => {
     e.preventDefault();
   
     const templateParams = {
+      prenom,
       nom,
       email,
       telephone,

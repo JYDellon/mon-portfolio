@@ -3,11 +3,11 @@ import './EtapesDansLaCreationDunSite.css';
 
 function EtapesDansLaCreationDunSite() {
     const etapes = [
-        "La compréhension de vos besoins",
-        "Propositions et maquettes",
-        "Le développement",
-        "Livraison",
-        "Suivi",
+        "Vos besoins",
+        "Maquettes & Propositions",
+        "Développement web",
+        "Mise en ligne",
+        "Accompagnement continu",
     ];
 
     const etapesDetails = [
