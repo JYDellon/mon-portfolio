@@ -643,12 +643,13 @@ margin: 0 auto;
 }
 
 .intro-formulaire {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: center;
+  font-size: 18px;
 }
 
 .intro-formulaire h2 {
-  font-size: 2em;
+  font-size: 1.5em;
   color: #333;
 }
 
@@ -707,36 +708,6 @@ margin: 0 auto;
   outline: 2px solid #007BFF;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Espacement entre chaque option de checkbox */
 .besoin-option {
   margin-bottom: 15px; /* Espacement vertical entre chaque option */
@@ -785,20 +756,20 @@ input[type="radio"] {
 
 /* Amélioration des marges pour le conteneur des objectifs */
 .objectifs-container {
-  margin-bottom: 20px; /* Espacement plus grand entre la section des objectifs et autres éléments */
+  margin-bottom: 10px; /* Espacement plus grand entre la section des objectifs et autres éléments */
 }
 
 .label-text2{
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .fonctionnalites-options{
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .fonctionnalite-option{
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .label-text{
@@ -812,4 +783,21 @@ input[type="radio"] {
 .graphisme-options{
   margin-top: 5cpx;
   margin-bottom: 50px;
+}
+
+/* Progress Bar Container */
+.progress-bar-container {
+  width: 940px;
+  height: 10px;
+  background-color: #f0f0f0;
+  margin: 20px 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Progress Bar */
+.progress-bar {
+  height: 100%;
+  background-color: #003f5c; /* Green color for progress */
+  transition: width 0.3s ease-in-out;
 }

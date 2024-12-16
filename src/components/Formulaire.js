@@ -87,29 +87,14 @@ const [isSuccessModalVisible, setIsSuccessModalVisible] = useState(false); // É
     return /^[A-Za-zÀ-ÖØ-öø-ÿ \-]+$/.test(value); // Allowing letters, spaces, and hyphens
   };
   
-
-
-
-
-
   const validateUrl = (url) => {
     const urlRegex = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$/;
     return urlRegex.test(url);
   };
 
-
-
-
-
-
-
-
-
   const validateTelephone = (value) => {
     return /^\d{10}$/.test(value); // Ensuring the telephone has exactly 10 digits
-  };
-
-  
+  };  
 
   const handleSelection = (service) => {
     setPrestation(service);
@@ -119,6 +104,7 @@ const [isSuccessModalVisible, setIsSuccessModalVisible] = useState(false); // É
   const closeModal = () => {
     setIsModalVisible(false);
   };
+
 
   useEffect(() => {
     const calcProgression = () => {
@@ -144,6 +130,8 @@ const [isSuccessModalVisible, setIsSuccessModalVisible] = useState(false); // É
     calcProgression();
   }, [etape, etape3Sub]);
   
+
+
 
 const handleSuivant = (e) => {
   if (etape === 2) {
@@ -278,10 +266,23 @@ if (etape === 3) {
 
   return (
     <>
-    
+
       {isModalVisible && <ModalError message={errorMessage} onClose={closeModal} />}
   {isSuccessModalVisible && <ModalSuccess message="Votre demande a été envoyée avec succès !" onClose={closeSuccessModal} />}
       <div className="formulaire-devisS">
+
+
+
+    {/* Progress Bar */}
+    <div className="progress-bar-container">
+  <div
+    className="progress-bar"
+    style={{ width: `${progression}%` }}
+  />
+</div>
+
+
+
 
 
             {etape === 1 && (
@@ -581,6 +582,17 @@ if (etape === 3) {
             )}
                 
    
+
+
+
+
+
+
+
+
+
+
+
     {etape > 1 && (
             <div className="footerFormulaire">
               <button onClick={handlePrecedent}>Précédent</button>
