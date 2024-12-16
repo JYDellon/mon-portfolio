@@ -1,541 +1,145 @@
-/* ========== Réinitialisation Générale ========== */
+/* NosServices.css */
 
-* 
-
-{
-body, html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-
-}
-
-
-}
-
-
-
-
-.toggle-container {
+/* Conteneur principal */
+.services-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
-  height: 450px;
-  width: 90%;
-  max-width: 1000px;
-  min-width: 42px;
-  overflow-y: auto; 
-  background-color: rgba(255, 6, 255, 0);
+  margin: 40px 20px;
+  margin-bottom: 200px;
 }
 
-
-/* ========== Textes et Titres ========== */
-h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #003f5c;
+/* Titre de la section */
+.services-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
   text-align: center;
 }
 
-p {
-  margin-bottom: 10px;
+/* Grille de services */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-a {
-  text-decoration: none;
+/* Carte de service */
+.service-card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  font-weight: bold;
+
 }
+
+/* Effet au survol de la carte */
+.service-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Titre de la carte */
+.service-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+  margin-top: -15px;
+
+  transition: opacity 0.3s ease;
+}
+
+/* Description du service */
+.service-description {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+  visibility: visible;
+  opacity: 1;
+  text-align: justify;
+  transition: opacity 0.3s ease, visibility 0s 0.3s; /* Transition en douceur */
+}
+
+/* Détails du service (initialement cachés) */
+.service-details {
+  opacity: 0;
+  visibility: hidden;
+  margin-top: -5px;
+  font-size: 18px;
+  color: #555;
+  text-align: justify;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+/* Affichage des détails au survol de la carte */
+.service-card:hover .service-details {
+  opacity: 1;
+  visibility: visible; /* Les détails deviennent visibles */
+  transition: opacity 0.3s ease, visibility 0s 0s;
+  display: block;
+}
+
+/* Affichage des détails au survol de la carte */
+.service-card .service-details {
+  opacity: 1;
+  visibility: visible; /* Les détails deviennent visibles */
+  transition: opacity 0.3s ease, visibility 0s 0s;
+  display: none;
+}
+
+
+
+/* Masquer la description au survol */
+.service-card:hover .service-description {
+  display:none
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
 
 .intro-textNosServices {
   margin: 0 auto;
   margin-top: 20px;
+  font-weight: bold;
+  margin-bottom: -25px;
   text-align: center;
   font-size: 2em;
-  font-weight: bold;
-  line-height: 1.4;
   color: #054461;
-  width: 600px;
   padding: 10px 30px 10px 30px;
-  max-width: 1200px;
+  width: 90%;
   border-radius: 30px;
-  background: linear-gradient(to right, #bac1bb, #9bb8bc8d);
-  margin-top: 5px;
+  background: #ffffff;
+  width: 420px;
+  background: linear-gradient(to right, #bac1bb, #9bb8bc8d);    border: 1px solid #d7dcd8;
+ 
+  /* Ajout de l'animation */
   animation: descendreIntroduction 1s ease-out forwards;
 }
-
-/* Responsivité avec des Media Queries */
-@media (min-width: 993px) and(max-width: 1200px) {
-  .intro-textNosServices {
-    font-size: 1.5em; /* Taille légèrement réduite pour les écrans plus petits */
-    max-width: 600px; /* Ajustement de la largeur pour les écrans plus petits */
-  }
-
-}
-
-@media (max-width: 992px) {
-  .intro-textNosServices {
-    font-size: 1.5em; /* Réduction de la taille du texte pour s'adapter aux tablettes */
-    width: 420px;
-    margin: 0  auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .intro-textNosServices {
-    font-size: 1.5em;
-     /* Ajustement sur les petits écrans */
-     max-width: 70%;
-    width: 420px;
-  }
-  .toggle-container{
-    height: 350px;
-    margin: 0  auto;
-
-  }
-}
-
-@media (max-width: 576px) {
-  .intro-textNosServices {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 1.4em;
-    padding: 0 10px; /* Moins de padding pour éviter le débordement */
-    width: 95%;
-    height: 50px;
-    margin-bottom: 10px;
-    margin-top: -10px;
-  }
-  .toggle-container{
-    height: 350px;
-  }
-  
-}
-@media (max-width: 399px) {
-  .intro-textNosServices {
-    font-size: 21px; /* Taille encore plus petite pour les téléphones */
-    max-width: 300%; /* Utilise toute la largeur disponible */
-    padding: 0 10px; /* Moins de padding pour éviter le débordement */
-    width: 95%;
-    margin-bottom: 0px;
-    margin-top: -10px;
-  }
-  .toggle-container{
-    height: 350px;
-  }
-}
-
-
-
-
-
-/* ========== Nos Services ========== */
-.services-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-}
-
-
-
-/* ========== Carte de Service Principale ========== */
-
-
-.service-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to right, #003f5c, #6a9cb8);
-  border-radius: 50px;
-  width: 400px;
-  height: 50px;
-  padding: 10px;
-  color: white;
-  border: 1px solid white;
-  font-size: 15px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  animation: fadeInUp 0.6s ease-out forwards;
-  margin: 0 auto;
-  margin-top: 10px;
-  position: relative;
-  z-index: 0; 
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
-}
-
-.service-card.active {
-  background: #6a9cb8;
-}
-
-/* ========== Section Détails ========== */
-.service-details {
-  margin-top: 10px;
-  width:100%;
-  display: grid;gap: 10px;
-  grid-template-columns: repeat(1, 1fr);
-  
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(209, 150, 2, 0.88);
-  animation: fadeInDown 0.5s ease-out;
-}
-
-/* ========== Détails des Sous-Toggles ========== */
-.detail-card {
-  background: linear-gradient(to right, #003f5c, #6a9cb8);
-  font-size: 1em;
-  padding: 8px 10px;
-  color: white;
-  border-radius: 8px;
-  margin: 5px 0;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.detail-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
-}
-
-.detail-card.active {
-  background: #005f7c;
-  font-weight: bold;
-  width: 80%;
-  margin: 0 auto;
-}
-
-/* ========== Contenu des Cartes d'Informations ========== */
-.info-cards-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Deux colonnes de largeur égale */
-  gap: 10px; /* Espacement entre les cartes */
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 6px;
-  box-shadow: 0px 3px 5px rgba(239, 4, 4, 0.1);
-  animation: fadeInUp 0.5s ease-out;
-  
-}
-
-
-.info-card {
-  padding: 10px 15px;
-  background: white;
-  border: 1px solid #6a9cb8;
-  border-radius: 6px;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #003f5c;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* ========== Animations ========== */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-
-@media screen and (max-width: 1024px) {
-  .service-card {
-    width:400px;
-    height: 60px;
-    font-size: 1em;
-  }
-
-
-  .info-cards-container {
-    margin: 0 auto;
-    padding: 10px;
-    width: 100%;
-
-  }
-
-    .detail-card .detail-card.active{
-        width: 50%;
-        margin: 0 auto;
-      }
-    
-      .info-cards-container {
-        padding: 10px;
-        grid-template-columns: repeat(1, 1fr);
-        width: 100%;
-      }
-
-  .info-card {
-    font-size: 0.9em;
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-
-
-
-@media screen and (max-width: 768px) {
-
-  .service-details {
-    margin-top: 10px;
-    width:400px;
-    margin: 0 auto;    
-    background-color: rgba(161, 42, 165, 0);
-    padding: 10px;
-    display: grid;gap: 10px;
-    grid-template-columns: repeat(1, 1fr);
-
-    
-    
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(209, 150, 2, 0.88);
-    animation: fadeInDown 0.5s ease-out;
-  }
-
-  .service-card {
-    width: 300px;height:44px;
-    font-size: 0.9em;  
-  }
-  .info-cards-container {
-    padding: 10px;
-    grid-template-columns: repeat(1, 1fr);
-    width: 100%;
-    background-color: rgba(165, 42, 42, 0);
-  }
-
-  .info-card {
-    width: 100%;
-    padding: 10px;
-    background-color: rgb(255, 255, 255);
-  }
-
-  .detail-card .detail-card.active{
-    max-width: 100%;
-    width: 100%;
-
-  }
-  
-}
-
-@media screen and (max-width: 399px) {
-  .service-card {
-    width: 280px;
-    height: 50px;
-    font-size: 15px;
-  }
-
-  .info-cards-container {
-    margin: 0 auto;
-    padding: 10px;
-    width: 100%;
-
-  }
-
-    .detail-card .detail-card.active{
-        width: 35%;
-        margin: 0 auto;
-
-      }
-    
-      .info-cards-container {
-        padding: 10px;
-        grid-template-columns: repeat(1, 1fr);
-      }
-
-  .info-card {
-    font-size: 0.9em;
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-
-@keyframes entrerGauche {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes entrerDroite {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-
-.toggle-animation-1 {
-  animation: entrerGauche 0.3s ease forwards;
-}
-
-.toggle-animation-2 {
-  animation: entrerDroite 0.6s ease forwards;
-}
-
-.toggle-animation-3 {
-  animation: entrerGauche 0.9s ease forwards;
-}
-
-.toggle-animation-4 {
-  animation: entrerDroite 1.2s ease forwards;
-}
-
-.toggle-animation-5 {
-  animation: entrerGauche 1.5s ease forwards;
-}
-/* Animations spécifiques aux sous-toggles */
-.sub-toggle-animation-1 {
-  animation: bounceIn 0.7s ease forwards;
-}
-
-.sub-toggle-animation-2 {
-  animation: fadeInScale 0.7s ease forwards;
-}
-
-.sub-toggle-animation-3 {
-  animation: flipInX 0.7s ease forwards;
-}
-
-.sub-toggle-animation-4 {
-  animation: zoomInRotate 0.7s ease forwards;
-}
-
-
-@keyframes entrerGauche {
-  from {
-      transform: translateX(-100%);
-      opacity: 0;
-  }
-  to {
-      transform: translateX(0);
-      opacity: 1;
-  }
-}
-
-@keyframes entrerDroite {
-  from {
-      transform: translateX(100%);
-      opacity: 0;
-  }
-  to {
-      transform: translateX(0);
-      opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-      transform: translateY(50%);
-      opacity: 0;
-  }
-  to {
-      transform: translateY(0);
-      opacity: 1;
-  }
-}
-
-@keyframes rotateIn {
-  from {
-      transform: rotate(-90deg);
-      opacity: 0;
-  }
-  to {
-      transform: rotate(0);
-      opacity: 1;
-  }
-}
-
-@keyframes bounceIn {
-  from {
-      transform: scale(0.5);
-      opacity: 0;
-  }
-  to {
-      transform: scale(1);
-      opacity: 1;
-  }
-}
-
-@keyframes fadeInScale {
-  from {
-      transform: scale(0.8);
-      opacity: 0;
-  }
-  to {
-      transform: scale(1);
-      opacity: 1;
-  }
-}
-
-@keyframes flipInX {
-  from {
-      transform: rotateX(90deg);
-      opacity: 0;
-  }
-  to {
-      transform: rotateX(0);
-      opacity: 1;
-  }
-}
-
-@keyframes zoomInRotate {
-  from {
-      transform: scale(0.5) rotate(-15deg);
-      opacity: 0;
-  }
-  to {
-      transform: scale(1) rotate(0);
-      opacity: 1;
-  }
-}
-
-  h2{
-    color: #003f5c;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
