@@ -287,18 +287,7 @@ if (etape === 3) {
 
             {etape === 1 && (
               <div className="step-container">
-                <div className="intro-formulaire">
-                  <h2>Obtenez un devis personnalisé</h2>
-                  <p>
-                    Pour nous permettre de vous fournir un devis précis, nous vous invitons à remplir ce formulaire. Cela nous aidera à mieux comprendre vos besoins et à définir les services les mieux adaptés à votre projet.
-                  </p>
-                  <p>
-                    Le formulaire se compose de plusieurs étapes simples. N'hésitez pas à revenir en arrière si vous avez besoin de modifier vos réponses.
-                  </p>
-                  <p>
-                    Toutes vos informations resteront confidentielles et ne seront utilisées que dans le cadre de votre demande.
-                  </p>
-                </div>
+
 
                 <p className="selection-header">Quelle prestation vous intéresse ?</p>
 

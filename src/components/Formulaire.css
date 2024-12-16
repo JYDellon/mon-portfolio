@@ -479,7 +479,7 @@ margin: 0 auto;
   }
 
   .formulaire-devisS{
-    height: 59vh;
+    height: 70vh;
   }
   
   .footerFormulaire button {
@@ -639,24 +639,6 @@ margin: 0 auto;
 
 .step-container {
   padding: 20px;
-  font-family: Arial, sans-serif;
-}
-
-.intro-formulaire {
-  margin-bottom: 10px;
-  text-align: center;
-  font-size: 18px;
-}
-
-.intro-formulaire h2 {
-  font-size: 1.5em;
-  color: #333;
-}
-
-.intro-formulaire p {
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #555;
 }
 
 .selection-header {
@@ -751,6 +733,7 @@ input[type="radio"] {
   margin-bottom: 15px; /* Espacement entre les champs de texte */
   padding: 10px; /* Amélioration du padding pour les textarea */
   width: 100%;
+  
   resize: vertical; /* Permet de redimensionner verticalement les textarea */
 }
 
@@ -787,10 +770,12 @@ input[type="radio"] {
 
 /* Progress Bar Container */
 .progress-bar-container {
-  width: 940px;
+  max-width: 940px;
+  width: 90%;
   height: 10px;
   background-color: #f0f0f0;
   margin: 20px 0;
+  margin-bottom: 15px;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -801,3 +786,168 @@ input[type="radio"] {
   background-color: #003f5c; /* Green color for progress */
   transition: width 0.3s ease-in-out;
 }
+
+
+
+
+/* Styling the toggle button */
+.toggle-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+/* Styling for the collapsible content */
+.intro-content {
+  display: none;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.intro-content.open {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+/* Media query for screens <= 767px */
+@media (max-width: 767px) {
+  
+  .intro-formulaire {
+    margin-bottom: 20px;
+  }
+
+
+
+
+  .intro-content {
+    background-color: #f0f0f0;
+  }
+
+.formulaire-devisS{
+  margin-bottom: 200px;
+}
+
+.fonctionnalites-section,.graphisme-section{
+  height:50vh;
+}
+
+
+.formulaire-devisS{
+  height: 75vh;
+}
+
+
+}
+
+
+
+/* Media query for screens <= 767px */
+@media (max-width: 399x) {
+  
+  .intro-formulaire {
+    margin-bottom: 20px;
+  }
+
+
+
+
+  .intro-content {
+    background-color: #f0f0f0;
+  }
+
+.formulaire-devisS{
+  margin-bottom: 200px;
+}
+
+.fonctionnalites-section,.graphisme-section{
+  height:50vh;
+}
+
+
+.formulaire-devisS{
+  height: 75vh;
+}
+
+
+}
+
+
+
+
+
+/* Contenu de l'introduction avec comportement d'overflow */
+.intro-content {
+  display: none;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  max-height: 400px; /* Hauteur maximale */
+  overflow-y: auto; /* Scroll vertical si contenu excède 400px */
+  max-height: 200px;
+}
+
+.intro-content.open {
+  display: block;
+}
+
+
+
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centrage horizontal */
+  height: 30vh; /* Assurez-vous que le parent a une hauteur définie */
+  min-height: 300px; /* Optionnel, pour s'assurer d'un espace minimal */
+  gap: 5px; /* Espacement entre les cartes */
+  padding: 20px; /* Optionnel, pour éviter que les cartes touchent les bords */
+  background-color: #00ff0800;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 200px; /* Largeur des cartes */
+  height: 75px; /* Hauteur des cartes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f5f5f5; /* Couleur de fond des cartes */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card.selected {
+  border: 2px solid #007bff;
+}
+
+
+
+
+
+
+
+
+
+
+
