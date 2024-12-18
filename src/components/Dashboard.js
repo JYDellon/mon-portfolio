@@ -8,7 +8,7 @@ function Dashboard() {
   useEffect(() => {
     // Appeler l'API Symfony pour récupérer les données de visites de pages
     axios
-      .get('http://localhost:8000/api/visit')  // Assurez-vous que l'URL est correcte selon votre configuration Symfony
+      .get('https://mon-portfolio-j2gufy435-dellons-projects.vercel.app:8000/api/visit')  // Assurez-vous que l'URL est correcte selon votre configuration Symfony
       .then((response) => {
         // Filtrer les visites pour exclure celles concernant la page "/dashboard"
         const filteredVisits = response.data.filter(pageVisit => pageVisit.pageUrl !== "/dashboard");

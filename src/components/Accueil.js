@@ -26,7 +26,7 @@ function Accueil() {
 
 useEffect(() => {
     console.log("Visite enregistrée pour la page d'accueil");  // Ajoutez un log ici
-    axios.post('http://localhost:8000/api/visit/accueil', {
+    axios.post('https://mon-portfolio-j2gufy435-dellons-projects.vercel.app/api/visit/accueil', {
         page: 'accueil', // Le nom de la page à enregistrer
     })
     .then(response => {
