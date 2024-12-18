@@ -1,0 +1,67 @@
+/* Styles du tableau du Dashboard */
+.dashboard-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dashboard-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #003f5c;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.dashboard-table th {
+    background-color: #003f5c;
+    color: white;
+}
+
+.dashboard-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.dashboard-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.dashboard-table td {
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+
+
+.dashboard-container {
+    margin: 0 auto;
+    margin-top: 20px;
+    font-weight: bold;
+    margin-bottom: -50px;
+    text-align: center;
+    font-size: 18px;
+    color: #054461;
+    padding: 10px 30px 10px 30px;
+    width: 90%;
+    border-radius: 30px;
+    background: #ffffff;
+    width: 420px;
+    background: linear-gradient(to right, #bac1bb, #9bb8bc8d);    border: 1px solid #d7dcd8;
+    
+    /* Ajout de l'animation */
+    animation: descendreIntroduction 1s ease-out forwards;
+  }

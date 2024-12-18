@@ -43,7 +43,8 @@
     top: 60px; /* Ajustez en fonction de la hauteur de votre header */
     left: 0;
     margin: 0 auto;
-    width: 1080px;
+    width: auto;
+    max-width: 1333px;
     max-height: 0;
     overflow: hidden;
     background-color: rgb(255, 255, 255);
@@ -262,3 +263,134 @@
     background-size: cover;
     background-position: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Conteneur principal de la navbar */
+.navbar-container {
+    position: relative;
+    display: flex;               /* Flexbox pour permettre une largeur dynamique */
+    justify-content: center;     /* Centrer la navbar */
+    width: 100%;                 /* Prendre toute la largeur de l'écran */
+    z-index: 1000;
+}
+
+/* Menu principal (container pour les liens) */
+.navbar-menu {
+    display: flex;               /* Flexbox pour ajuster la largeur en fonction des éléments */
+    flex-direction: row;         /* Disposition des liens en ligne */
+    justify-content: space-evenly; /* Espacement égal entre les éléments */
+    align-items: center;         /* Centrer les éléments verticalement */
+    background-color: rgb(255, 255, 255);
+    background: #d7dcd8;
+    border: 1px solid #003f5c;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    transition: max-height 0.4s ease-in-out;
+    z-index: 998;
+    width: auto;                  /* La largeur sera automatiquement ajustée selon les éléments */
+    padding: 5px 5x;           /* Espacement autour du contenu */
+}
+
+/* Menu ouvert */
+.navbar-menu.open {
+    max-height: 300px;            /* Ajustez selon la hauteur du menu */
+}
+
+/* Liens du menu */
+.navbar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;          /* Disposition horizontale */
+    align-items: center;
+}
+
+.navbar-menu ul li {
+    width: auto;                  /* La largeur de chaque élément est ajustée automatiquement */
+}
+
+.navbar-menu ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #003f5c;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    border-radius: 50px;
+    width: 190px;
+}
+
+.navbar-menu ul li a.active {
+    background-color: #6a9cb8;
+    color: white;
+    border-radius: 50px;
+}
+
+.navbar-menu ul li a:hover {
+    background-color: #003f5c;
+    color: white;
+    border-radius: 50px;
+}
+
+/* ======= Responsivité ======= */
+@media (min-width: 1060px) {
+    .navbar-menu {
+        position: static;
+        max-height: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        box-shadow: none;
+    }
+
+    .navbar-menu ul {
+        flex-direction: row;
+    }
+
+    .navbar-menu ul li {
+        width: auto;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .overlay {
+        display: none;
+    }
+}
+

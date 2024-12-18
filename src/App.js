@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import axios from 'axios'; // Importation d'Axios
 import Navbar from './components/Navbar';
 import Accueil from './components/Accueil';
 import APropos from './components/APropos';
@@ -13,6 +14,7 @@ import Formulaire from './components/Formulaire';
 import FormulaireContact from './components/FormulaireContact';
 import Devis from './components/Devis';
 import Footer from './components/Footer';
+import Dashboard from './components/Dashboard'; 
 
 // Importation du logo
 import logo1 from './assets/images/logo05.1.png';
@@ -43,6 +45,21 @@ function App() {
   const [currentBackground, setCurrentBackground] = useState(fondAccueil);
   const [nextBackground, setNextBackground] = useState(null);
   const [transitioning, setTransitioning] = useState(false);
+
+  // Effect pour envoyer la requête POST de visite chaque fois que la page change
+  useEffect(() => {
+    const incrementVisitCounter = async () => {
+      const pageUrl = location.pathname.replace('/', ''); // Extraire l'URL de la page actuelle sans le '/'
+      try {
+        const response = await axios.post(`http://localhost:8000/api/visit/${pageUrl}`);
+        console.log('Compteur de visites incrémenté:', response.data.count);
+      } catch (error) {
+        console.error('Erreur lors de l\'incrémentation du compteur de visites:', error);
+      }
+    };
+
+    incrementVisitCounter();
+  }, [location]);  // Le tableau [location] permet d'exécuter l'effet à chaque changement de route
 
   // Utilisation de useEffect pour changer l'arrière-plan selon la route
   useEffect(() => {
@@ -108,6 +125,7 @@ function App() {
         <Route path="/formulaire-devis" element={<Formulaire />} />
         <Route path="/formulaire-contact" element={<FormulaireContact />} />
         <Route path="/devis" element={<Devis />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
 
       <Footer />
