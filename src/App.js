@@ -51,7 +51,7 @@ function App() {
     const incrementVisitCounter = async () => {
       const pageUrl = location.pathname.replace('/', ''); // Extraire l'URL de la page actuelle sans le '/'
       try {
-        const response = await axios.post(`http://localhost:8000/api/visit/${pageUrl}`);
+        const response = await axios.post(`https://aeonixbackendsynfomy.vercel.app/api/visit/${pageUrl}`);
         console.log('Compteur de visites incrémenté:', response.data.count);
       } catch (error) {
         console.error('Erreur lors de l\'incrémentation du compteur de visites:', error);

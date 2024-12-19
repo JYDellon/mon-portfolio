@@ -8,7 +8,7 @@ function Dashboard() {
   useEffect(() => {
     // Appeler l'API Symfony pour récupérer les données de visites de pages
     axios
-      .get('https://mon-portfolio-j2gufy435-dellons-projects.vercel.app:8000/api/visit')  // Assurez-vous que l'URL est correcte selon votre configuration Symfony
+      .get('https://aeonixbackendsynfomy.vercel.app/api/visit')  // Assurez-vous que l'URL est correcte selon votre configuration Symfony
       .then((response) => {
         // Filtrer les visites pour exclure celles concernant la page "/dashboard"
         const filteredVisits = response.data.filter(pageVisit => pageVisit.pageUrl !== "/dashboard");
@@ -19,9 +19,32 @@ function Dashboard() {
       });
   }, []);
 
+  // Fonction de réinitialisation
+  const handleReset = () => {
+    axios
+      .delete('https://aeonixbackendsynfomy.vercel.app/api/visit') // Nouvelle requête DELETE pour réinitialiser les données
+      .then(() => {
+        // Une fois la suppression terminée, on récupère à nouveau les données
+        axios
+          .get('https://aeonixbackendsynfomy.vercel.app/api/visit')
+          .then((response) => {
+            const filteredVisits = response.data.filter(pageVisit => pageVisit.pageUrl !== "/dashboard");
+            setPageVisits(filteredVisits);
+          })
+          .catch((error) => {
+            console.error('Erreur lors de la récupération des données après réinitialisation:', error);
+          });
+      })
+      .catch((error) => {
+        console.error('Erreur lors de la réinitialisation des données:', error);
+      });
+  };
+
   return (
     <div className="dashboard-container">
       <h1>Tableau de bord des visites de pages</h1>
+
+      <button onClick={handleReset}>Réinitialiser</button>
 
       <table className="dashboard-table">
         <thead>
@@ -30,7 +53,7 @@ function Dashboard() {
             <th>Nombre de visites</th>
           </tr>
         </thead>
-        <tbody>
+        {/* <tbody>
           {pageVisits.length >= 0 ? (
             pageVisits.map((pageVisit) => (
               <tr key={pageVisit.pageUrl}>
@@ -43,7 +66,77 @@ function Dashboard() {
               <td colSpan="2">Aucune donnée disponible</td>
             </tr>
           )}
-        </tbody>
+        </tbody> */}
+        {/* <tbody>
+  {pageVisits.length >= 0 ? (
+    pageVisits.map((pageVisit) => (
+      <tr key={pageVisit.pageUrl}>
+        <td>
+          {pageVisit.pageUrl === "nos-services" ? "Nos solutions web" : pageVisit.pageUrl}
+        </td>
+        <td>{pageVisit.visitCount}</td>
+      </tr>
+    ))
+  ) : (
+    <tr>
+      <td colSpan="2">Aucune donnée disponible</td>
+    </tr>
+  )}
+</tbody> */}
+
+<tbody>
+  {pageVisits.length >= 0 ? (
+    pageVisits.map((pageVisit) => {
+      let displayName = pageVisit.pageUrl;
+
+      switch (pageVisit.pageUrl) {
+        case 'nos-services':
+          displayName = 'Nos services web';
+          break;
+        case 'portfolio':
+          displayName = 'Études de cas';
+          break;
+        case 'a-propos':
+          displayName = 'À propos de';
+          break;
+        case 'accueil':
+          displayName = 'Accueil';
+          break;
+        case 'a-contact':
+          displayName = 'Contact';
+          break;
+        case 'rgpd':
+          displayName = 'RGPD';
+          break;
+        case 'etapesCreationSite':
+          displayName = 'Votre site web clés en main';
+          break;
+        case 'devis':
+          displayName = 'Devis';
+          break;
+        default:
+          displayName = pageVisit.pageUrl;
+          break;
+      }
+
+      return (
+        <tr key={pageVisit.pageUrl}>
+          <td>{displayName}</td>
+          <td>{pageVisit.visitCount}</td>
+        </tr>
+      );
+    })
+  ) : (
+    <tr>
+      <td colSpan="2">Aucune donnée disponible</td>
+    </tr>
+  )}
+</tbody>
+
+
+
+
+
       </table>
     </div>
   );
