@@ -28,10 +28,10 @@ function Accueil() {
 
 
 
-    
+
 useEffect(() => {
     console.log("Visite enregistrée pour la page d'accueil");  // Ajoutez un log ici
-    axios.post('https://aeonixbackendsynfomy.vercel.app/api/visit/accueil', {
+    axios.post('http://localhost:8000/api//visit/accueil', {
         page: 'accueil', // Le nom de la page à enregistrer
     })
     .then(response => {
