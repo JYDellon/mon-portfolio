@@ -8,7 +8,7 @@ function Dashboard() {
   useEffect(() => {
     // Appeler l'API Symfony pour récupérer les données de visites de pages
     axios
-      .get('http://localhost:8000/api/visit')  // Assurez-vous que l'URL est correcte selon votre configuration Symfony
+      .get('https://aeonixbackendsynfomy.vercel.app/api/visit')  // Assurez-vous que l'URL est correcte selon votre configuration Symfony
       .then((response) => {
         // Filtrer les visites pour exclure celles concernant la page "/dashboard"
         const filteredVisits = response.data.filter(pageVisit => pageVisit.pageUrl !== "/dashboard");
@@ -22,11 +22,11 @@ function Dashboard() {
   // Fonction de réinitialisation
   const handleReset = () => {
     axios
-      .delete('http://localhost:8000/api/visit') // Nouvelle requête DELETE pour réinitialiser les données
+      .delete('https://aeonixbackendsynfomy.vercel.app/api/visit') // Nouvelle requête DELETE pour réinitialiser les données
       .then(() => {
         // Une fois la suppression terminée, on récupère à nouveau les données
         axios
-          .get('http://localhost:8000/api/visit')
+          .get('https://aeonixbackendsynfomy.vercel.app/api/visit')
           .then((response) => {
             const filteredVisits = response.data.filter(pageVisit => pageVisit.pageUrl !== "/dashboard");
             setPageVisits(filteredVisits);
