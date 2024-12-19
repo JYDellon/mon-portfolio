@@ -40,8 +40,7 @@ function Navbar({ onLinkClick }) {
 
   // Vérifie l'adresse IP et met à jour l'état
   useEffect(() => {
-    axios
-      .get('http://api.ipify.org?format=json')
+    axios.get('https://api.ipify.org/?format=json')
       .then((response) => {
         const clientIp = response.data.ip;
         setIsPersonalPc(clientIp === personalPcIp);
