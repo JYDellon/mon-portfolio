@@ -8,7 +8,7 @@ function Dashboard() {
   useEffect(() => {
     // Appeler l'API Symfony pour récupérer les données de visites de pages
     axios
-      .get('https://aeonixbackendsynfomy.vercel.app/api/visit')  // Assurez-vous que l'URL est correcte selon votre configuration Symfony
+      .get('http://localhost:8000/api/visit')  // Assurez-vous que l'URL est correcte selon votre configuration Symfony
       .then((response) => {
         // Filtrer les visites pour exclure celles concernant la page "/dashboard"
         const filteredVisits = response.data.filter(pageVisit => pageVisit.pageUrl !== "/dashboard");
@@ -22,11 +22,11 @@ function Dashboard() {
   // Fonction de réinitialisation
   const handleReset = () => {
     axios
-      .delete('https://aeonixbackendsynfomy.vercel.app/api/visit') // Nouvelle requête DELETE pour réinitialiser les données
+      .delete('http://localhost:8000/api/visit') // Nouvelle requête DELETE pour réinitialiser les données
       .then(() => {
         // Une fois la suppression terminée, on récupère à nouveau les données
         axios
-          .get('https://aeonixbackendsynfomy.vercel.app/api/visit')
+          .get('http://localhost:8000/api/visit')
           .then((response) => {
             const filteredVisits = response.data.filter(pageVisit => pageVisit.pageUrl !== "/dashboard");
             setPageVisits(filteredVisits);
@@ -96,7 +96,7 @@ function Dashboard() {
         case 'portfolio':
           displayName = 'Études de cas';
           break;
-        case 'a-propos':
+        case 'apropos':
           displayName = 'À propos de';
           break;
         case 'accueil':
@@ -108,7 +108,7 @@ function Dashboard() {
         case 'rgpd':
           displayName = 'RGPD';
           break;
-        case 'etapesCreationSite':
+        case 'etapesDansLaCreationDunSite':
           displayName = 'Votre site web clés en main';
           break;
         case 'devis':

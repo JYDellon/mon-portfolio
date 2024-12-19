@@ -32,7 +32,7 @@ const FormulaireContact = ({ onClose }) => {
     setIsSubmitting(true);
     setError(null);
     try {
-      const response = await fetch('https://aeonixbackendsynfomy.vercel.app/api/contact', {
+      const response = await fetch('http://localhost:8000/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
