@@ -32,6 +32,7 @@ const FormulaireContact = ({ onClose }) => {
     setIsSubmitting(true);
     setError(null);
     try {
+
       const response = await fetch('https://serveraeonixemail.vercel.app/api/contact', {
         method: 'POST',
         headers: {
@@ -39,6 +40,9 @@ const FormulaireContact = ({ onClose }) => {
         },
         body: JSON.stringify(data),
       });
+      
+
+
 
       if (response.ok) {
         // Réinitialiser les champs du formulaire après envoi

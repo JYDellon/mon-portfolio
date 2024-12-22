@@ -12,7 +12,6 @@ function APropos() {
     ];
 
     const chapitresDetails = [
-        // Détails pour chaque chapitre
         "Créée en 2025, notre société s’engage à accompagner les entreprises dans leur transformation digitale grâce à des solutions web modernes, esthétiques et performantes.\n\nSpécialisés dans la conception de sites vitrines et e-commerce, nous mettons notre expertise au service des entreprises de toutes tailles, pour les aider à se démarquer et à atteindre leurs objectifs en ligne.\n\nDepuis notre lancement, nous avons déjà collaboré avec [nombre ou type de clients, ex. : plusieurs TPE, PME ou artisans] et avons à cœur de construire des relations durables basées sur la qualité, la confiance et l’innovation.",
 
         "Notre mission est claire :\n\n- Fournir des sites web sur mesure, à la fois beaux et fonctionnels.\n- Aider nos clients à développer leur visibilité et leur notoriété en ligne.\n- Simplifier la création et la gestion de leur présence numérique grâce à des outils adaptés.\n\nNous savons qu’un site internet n’est pas seulement une vitrine : c’est un levier essentiel pour atteindre vos prospects et fidéliser vos clients.",
@@ -30,18 +29,24 @@ function APropos() {
         setChapitreSelectionne(chapitreSelectionne === index ? null : index);
     };
 
-    useEffect(() => {
-        console.log("Visite enregistrée pour la page À Propos");  // Ajoutez un log ici
-        axios.post('http://localhost:8000/api/visit/apropos', {
-            page: 'apropos', // Le nom de la page à enregistrer
-        })
-        .then(response => {
+    // Fonction pour enregistrer une visite
+    const recordVisit = async () => {
+        try {
+            const response = await axios.post('https://aeonixbackendsynfomy.vercel.app/api/visit/apropos', {}, {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
             console.log("Visite enregistrée avec succès", response.data);
-        })
-        .catch(error => {
-            console.error("Erreur lors de l'enregistrement de la visite", error);
-        });
-    }, []); // Le tableau vide fait en sorte que cela ne se déclenche qu'une fois au premier rendu
+        } catch (error) {
+            console.error("Erreur lors de l'enregistrement de la visite :", error);
+        }
+    };
+
+    // Enregistrer une visite lors du chargement du composant
+    useEffect(() => {
+        recordVisit();
+    }, []);
 
     return (
         <div className="apropos-container">

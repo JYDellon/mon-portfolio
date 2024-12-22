@@ -237,6 +237,8 @@ if (etape === 3) {
     };
   
     try {
+
+
       const response = await fetch('https://serveraeonixemail.vercel.app/api/devis', {
         method: 'POST',
         headers: {
@@ -245,6 +247,8 @@ if (etape === 3) {
         body: JSON.stringify(templateParams),
       });
       
+
+
   
       if (response.ok) {
         setIsSuccessModalVisible(true); // Afficher la modale de succès

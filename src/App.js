@@ -52,15 +52,23 @@ function App() {
   // Effect pour envoyer la requête POST de visite chaque fois que la page change
   useEffect(() => {
     const incrementVisitCounter = async () => {
-      const pageUrl = location.pathname.replace('/', ''); // Extraire l'URL de la page actuelle sans le '/'
+      const pageUrl = location.pathname.replace('/', '') || 'accueil'; // Par défaut, "accueil"
       try {
-        const response = await axios.post(`https://aeonixbackendsynfomy.vercel.app/api/visit/${pageUrl}`);
-        console.log('Compteur de visites incrémenté:', response.data.count);
+          const response = await axios.post(`http://localhost:8000/api/visit/${pageUrl}`, {}, {
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              withCredentials: true,
+          });
+          console.log('Compteur de visites incrémenté:', response.data);
       } catch (error) {
-        console.error('Erreur lors de l\'incrémentation du compteur de visites:', error);
+          console.error('Erreur lors de l\'incrémentation du compteur de visites:', error);
       }
-    };
+  };
+  
 
+
+    
     incrementVisitCounter();
   }, [location]);  // Le tableau [location] permet d'exécuter l'effet à chaque changement de route
 
