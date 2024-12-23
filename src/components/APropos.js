@@ -30,18 +30,68 @@ function APropos() {
     };
 
     // Fonction pour enregistrer une visite
+    // const recordVisit = async () => {
+    //     try {
+    //         const response = await axios.post('http://localhost:8000/api/visit/a-propos', {}, {
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             }
+    //         });
+    //         console.log("Visite enregistrée avec succès", response.data);
+    //     } catch (error) {
+    //         console.error("Erreur lors de l'enregistrement de la visite :", error);
+    //     }
+    // };
+
+
+
+
     const recordVisit = async () => {
+        console.log(`[recordVisit] Appel pour enregistrer la visite.`);
         try {
-            const response = await axios.post('https://aeonixbackendsynfomy.vercel.app/api/visit/apropos', {}, {
-                headers: {
-                    'Content-Type': 'application/json',
+            const response = await axios.post(
+                'http://localhost:8000/api/visit/a-propos',
+                {},
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
                 }
-            });
-            console.log("Visite enregistrée avec succès", response.data);
+            );
+            console.log(`[recordVisit] Réponse du serveur`, response.data);
         } catch (error) {
-            console.error("Erreur lors de l'enregistrement de la visite :", error);
+            console.error(`[recordVisit] Erreur lors de l'enregistrement de la visite :`, error);
         }
     };
+    
+
+
+
+    // useEffect(() => {
+    //     const visitedKey = 'pageVisited:a-propos';
+    //     if (!localStorage.getItem(visitedKey)) {
+    //         recordVisit();
+    //         localStorage.setItem(visitedKey, 'true');
+    //     }
+    // }, []);
+    
+
+
+
+
+    useEffect(() => {
+        const visitedKey = 'pageVisited:a-propos';
+        console.log(`[useEffect] Vérification de la visite pour : ${visitedKey}`);
+        if (!localStorage.getItem(visitedKey)) {
+            console.log(`[useEffect] Aucune visite trouvée, enregistrement en cours...`);
+            recordVisit();
+            localStorage.setItem(visitedKey, 'true');
+        }
+    }, []);
+    
+
+
+
 
     // Enregistrer une visite lors du chargement du composant
     useEffect(() => {

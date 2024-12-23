@@ -23,7 +23,7 @@ function Contact() {
 
     useEffect(() => {
         console.log("Visite enregistrée pour la page Contact");  // Ajoutez un log ici
-        axios.post('https://aeonixbackendsynfomy.vercel.app/api/visit/Contact', {
+        axios.post('http://localhost:8000/api/visit/contact', {
             page: 'contact', // Le nom de la page à enregistrer
         })
         .then(response => {

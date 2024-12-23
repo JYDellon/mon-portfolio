@@ -8,7 +8,7 @@ function Dashboard() {
   // Charger les données des visites depuis l'API
   useEffect(() => {
     axios
-      .get('https://aeonixbackendsynfomy.vercel.app/api/visit') // Vérifiez que l'URL correspond à votre configuration Symfony
+      .get('http://localhost:8000/api/visit') // Vérifiez que l'URL correspond à votre configuration Symfony
       .then((response) => {
         const filteredVisits = response.data.filter(
           (pageVisit) => pageVisit.pageUrl !== "/dashboard"
@@ -26,10 +26,10 @@ function Dashboard() {
   // Réinitialiser les données des visites
   const handleReset = () => {
     axios
-      .delete('https://aeonixbackendsynfomy.vercel.app/api/visit')
+      .delete('http://localhost:8000/api/visit')
       .then(() => {
         axios
-          .get('https://aeonixbackendsynfomy.vercel.app/api/visit')
+          .get('http://localhost:8000/api/visit')
           .then((response) => {
             const filteredVisits = response.data.filter(
               (pageVisit) => pageVisit.pageUrl !== "/dashboard"

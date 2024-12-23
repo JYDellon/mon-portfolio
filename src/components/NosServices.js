@@ -49,7 +49,7 @@ const NosServices = () => {
   // Fonction pour enregistrer la visite
   const recordVisit = async () => {
     try {
-      const response = await axios.post('https://aeonixbackendsynfomy.vercel.app/api/visit/nos-services', {}, {
+      const response = await axios.post('http://localhost:8000/api/visit/nos-services', {}, {
         headers: {
           'Content-Type': 'application/json',
         }

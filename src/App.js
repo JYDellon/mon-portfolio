@@ -50,29 +50,51 @@ function App() {
   const [transitioning, setTransitioning] = useState(false);
 
   // Effect pour envoyer la requête POST de visite chaque fois que la page change
-  useEffect(() => {
-    const incrementVisitCounter = async () => {
-      const pageUrl = location.pathname.replace('/', '') || 'accueil'; // Par défaut, "accueil"
-      try {
-          const response = await axios.post(`http://localhost:8000/api/visit/${pageUrl}`, {}, {
-              headers: {
-                  'Content-Type': 'application/json',
-              },
-              withCredentials: true,
-          });
-          console.log('Compteur de visites incrémenté:', response.data);
-      } catch (error) {
-          console.error('Erreur lors de l\'incrémentation du compteur de visites:', error);
-      }
-  };
+  // useEffect(() => {
+  //   const incrementVisitCounter = async () => {
+  //     const pageUrl = location.pathname.replace('/', '') || 'accueil'; // Par défaut, "accueil"
+  //     try {
+  //         const response = await axios.post(`http://localhost:8000/api/visit/${pageUrl}`, {}, {
+  //             headers: {
+  //                 'Content-Type': 'application/json',
+  //             },
+  //             withCredentials: true,
+  //         });
+  //         console.log('Compteur de visites incrémenté:', response.data);
+  //     } catch (error) {
+  //         console.error('Erreur lors de l\'incrémentation du compteur de visites:', error);
+  //     }
+  // };
   
 
 
     
-    incrementVisitCounter();
-  }, [location]);  // Le tableau [location] permet d'exécuter l'effet à chaque changement de route
+  //   incrementVisitCounter();
+  // }, [location]);  // Le tableau [location] permet d'exécuter l'effet à chaque changement de route
 
   // Utilisation de useEffect pour changer l'arrière-plan selon la route
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   useEffect(() => {
     const newBackground = fondsRoutes[location.pathname] || fondAccueil;
     if (newBackground !== currentBackground) {
@@ -93,6 +115,9 @@ function App() {
     }
   }, [transitioning, nextBackground]);
 
+
+
+  
   return (
     <div className="app-container">
       <div className="background-container">

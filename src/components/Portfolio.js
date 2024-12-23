@@ -10,7 +10,7 @@ function Portfolio() {
     // Fonction pour enregistrer une visite
     const recordVisit = async () => {
         try {
-            const response = await axios.post('https://aeonixbackendsynfomy.vercel.app/api/visit/portfolio', {}, {
+            const response = await axios.post('http://localhost:8000/api/visit/portfolio', {}, {
                 headers: {
                     'Content-Type': 'application/json',
                 }

@@ -23,7 +23,7 @@ function Rgpd() {
   // Fonction pour enregistrer la visite de la page
   const recordVisit = async () => {
     try {
-      const response = await axios.post('https://aeonixbackendsynfomy.vercel.app/api/visit/rgpd', {}, {
+      const response = await axios.post('http://localhost:8000/api/visit/rgpd', {}, {
         headers: {
           'Content-Type': 'application/json',
         },

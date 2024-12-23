@@ -30,7 +30,7 @@ function EtapesDansLaCreationDunSite() {
     useEffect(() => {
         const recordVisit = async () => {
             try {
-                const response = await axios.post('https://aeonixbackendsynfomy.vercel.app/api/visit/etapesDansLaCreationDunSite', {}, {
+                const response = await axios.post('http://localhost:8000/api/visit/etapesCreationSite', {}, {
                     headers: {
                         'Content-Type': 'application/json',
                     },
